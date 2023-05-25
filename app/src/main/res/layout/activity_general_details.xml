@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.screening.GeneralDetailsActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/svScreening"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_28sdp"
+            android:paddingVertical="@dimen/_12sdp">
+
+            <TextView
+                android:id="@+id/tvLabelGeneralDetails"
+                style="@style/TextStyle_Regular_14"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/general_details_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/etSiteChange"
+                style="@style/Form_Spinner_Style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelGeneralDetails"
+                android:minHeight="@dimen/_40sdp" />
+
+
+            <TextView
+                android:id="@+id/tvTitleCategory"
+                style="@style/TextStyle_Regular_14"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/screening_catagory"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etSiteChange"
+                tools:ignore="RtlSymmetry" />
+
+            <RadioGroup
+                android:id="@+id/rgCategoryRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleCategory">
+
+                <RadioButton
+                    android:id="@+id/rbFacility"
+                    style="@style/RadioButton_General"
+                    android:layout_width="match_parent"
+                    android:text="@string/clinic" />
+
+                <RadioButton
+                    android:id="@+id/rbCommunity"
+                    style="@style/RadioButton_General"
+                    android:layout_width="match_parent"
+                    android:text="@string/community" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvTitleType"
+                style="@style/TextStyle_Regular_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/screening_type"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rgCategoryRow"
+                tools:ignore="RtlSymmetry" />
+
+            <com.askjeffreyliu.flexboxradiogroup.FlexBoxRadioGroup
+                android:id="@+id/rgType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:alignContent="space_around"
+                app:alignItems="flex_start"
+                app:flexWrap="wrap"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleType">
+
+                <RadioButton
+                    android:id="@+id/rbTypeBtn1"
+                    style="@style/RadioButton_General"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/_24sdp"
+                    android:text="@string/opd_triage" />
+
+                <RadioButton
+                    android:id="@+id/rbTypeBtn2"
+                    style="@style/RadioButton_General"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/_24sdp"
+                    android:text="@string/outpatient" />
+
+                <RadioButton
+                    android:id="@+id/rbTypeBtn3"
+                    style="@style/RadioButton_General"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/_24sdp"
+                    android:text="@string/inpatient" />
+
+                <RadioButton
+                    android:id="@+id/rbTypeBtn4"
+                    style="@style/RadioButton_General"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/_24sdp"
+                    android:text="@string/pharmacy" />
+
+                <RadioButton
+                    android:id="@+id/rbTypeBtn5"
+                    style="@style/RadioButton_General"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/_24sdp"
+                    android:text="@string/Other" />
+
+            </com.askjeffreyliu.flexboxradiogroup.FlexBoxRadioGroup>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOthers"
+                android:layout_width="match_parent"
+                android:hint="@string/type_your_comments"
+                android:gravity="start|top"
+                android:padding="@dimen/_8sdp"
+                android:layout_height="@dimen/_112sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/edittext_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/rgType" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNext"
+        style="@style/Button_Style"
+        android:layout_marginVertical="@dimen/_30sdp"
+        android:background="@drawable/button_selector_cobalt"
+        android:enabled="false"
+        android:minWidth="@dimen/_200sdp"
+        android:paddingHorizontal="@dimen/_30sdp"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svScreening" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

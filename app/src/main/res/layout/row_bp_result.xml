@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="@dimen/_12sdp">
+
+
+    <TextView
+        android:id="@+id/tvTake"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:textColor="@color/navy_blue"
+        android:textSize="@dimen/_14ssp" />
+
+
+    <TextView
+        android:id="@+id/tvSystolic"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:textColor="@color/navy_blue"
+        android:textSize="@dimen/_14ssp" />
+
+
+    <TextView
+        android:id="@+id/tvDiastolic"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:textColor="@color/navy_blue"
+        android:textSize="@dimen/_14ssp" />
+
+
+    <TextView
+        android:id="@+id/tvPulse"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:textColor="@color/navy_blue"
+        android:textSize="@dimen/_14ssp" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

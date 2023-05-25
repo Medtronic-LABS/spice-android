@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.medtroniclabs.opensource">
+
+    <permission
+        android:name="${applicationId}.permission.INTERNAL_ACTIVITY"
+        android:protectionLevel="signature" /> <!-- Required for foreground services on P+. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="${applicationId}.permission.INTERNAL_ACTIVITY" />
+
+    <application
+        android:name="com.medtroniclabs.opensource.SpiceBaseApplication"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:fullBackupOnly="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_circle"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NCDMergerandroid"
+        android:usesCleartextTraffic="@bool/clearText">
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.nutritionist.NutritionistActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.LifestyleBaseActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.patientedit.PatientEditActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.AdvancedSearchActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.PrescriptionCopyActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.pharamcist.PrescriptionRefillActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.labTechnician.LabTestListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.ContinuousMedicalReviewBaseActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.TestActivity"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.assessment.AssessmentHolderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.TreatmentPlanActivity"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.SearchPatientPortraitActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.LabTestCreateActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.MedicalReviewBaseActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.medicalreview.AssessmentReadingActivity"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.NutritionReferralActivity"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.screening.ScreeningAccountSiteChangeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.screening.StatsActivity"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.screening.TermsAndConditionActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.screening.ScreeningSummaryActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.formgeneration.formsupport.TimerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.boarding.ForgotPasswordActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.BaseActivity"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.boarding.ResourceLoadingScreen"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.formgeneration.formsupport.SpinnerSelectionActivity"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.enrollment.EnrollmentFormBuilderActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.screening.ScreeningFormBuilderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.screening.GeneralDetailsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.landing.LandingActivity"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.boarding.LoginActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <activity
+            android:name="com.medtroniclabs.opensource.ui.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.medtroniclabs.opensource.location.ForegroundOnlyLocationService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+        <service
+            android:name="com.medtroniclabs.opensource.uploadservice.UploadForegroundService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync"
+            android:permission="${applicationId}.permission.INTERNAL_ACTIVITY" />
+    </application>
+
+</manifest>

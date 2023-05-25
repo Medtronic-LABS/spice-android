@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.medicalreview.dialog.LabTestConfirmationDialog">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/titleCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.medtroniclabs.opensource.custom.DialogTitleFrameLayout
+                    android:id="@+id/labelHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:dialogTitle="@string/test_review_confirmation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                app:layout_constraintTop_toBottomOf="@id/titleCard"
+                android:background="@color/edittext_stroke" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextStyle_Regular_16"
+                android:id="@+id/tvContent"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:minHeight="@dimen/_200sdp"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/have_you_observed_to_confirm_the_test_values_and_comments_uploaded_by_the_lab_technician"
+                android:textColor="@color/navy_blue"
+                android:textSize="@dimen/_20ssp" />
+
+            <View
+                android:id="@+id/bottomDivider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                app:layout_constraintTop_toBottomOf="@id/tvContent"
+                android:background="@color/edittext_stroke" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnConfirm"
+                style="@style/Button_Style_confirm"
+                android:text="@string/yes_i_confirm"
+                android:layout_width="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bottomDivider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:minHeight="@dimen/_42sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:layout_margin="@dimen/_15sdp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/Button_Style_cancel"
+                android:id="@+id/btnCancel"
+                android:text="@string/no"
+                app:layout_constraintTop_toBottomOf="@id/bottomDivider"
+                app:layout_constraintEnd_toStartOf="@id/btnConfirm"
+                android:layout_width="wrap_content"
+                android:minHeight="@dimen/_42sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:layout_margin="@dimen/_15sdp"/>
+
+            <RelativeLayout
+                android:id="@+id/loadingProgress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/loading_transparent_variant"
+                android:minHeight="@dimen/_200sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/spin_kit"
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/loader_spice" />
+
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

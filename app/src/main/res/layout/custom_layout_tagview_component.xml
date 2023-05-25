@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/TextStyle_Regular_16"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_15sdp"
+    android:checkable="true"
+    android:fontFamily="@font/inter_regular"
+    android:paddingVertical="@dimen/_5sdp"
+    android:textColor="@color/diagnosis_text_color_selector"
+    android:textSize="@dimen/_16ssp"
+    app:checkedIconEnabled="false"
+    app:chipCornerRadius="@dimen/_16sdp"
+    app:chipEndPadding="@dimen/_20sdp"
+    app:chipIconSize="@dimen/_12sdp"
+    app:chipMinHeight="@dimen/_35sdp"
+    app:chipStartPadding="@dimen/_20sdp"
+    app:chipStrokeColor="@color/mild_gray"
+    app:chipStrokeWidth="@dimen/_1sdp"
+    app:iconEndPadding="@dimen/_8sdp"
+    app:iconStartPadding="@dimen/_5sdp" />
+

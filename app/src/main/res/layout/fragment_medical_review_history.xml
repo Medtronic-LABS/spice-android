@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ui.medicalreview.MedicalReviewHistoryFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardView_Style"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <View
+                android:id="@+id/viewCardBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/cardTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/cardTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/medical_review_history"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewCardBG"
+                app:layout_constraintStart_toStartOf="@id/viewCardBG"
+                app:layout_constraintTop_toTopOf="@id/viewCardBG" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/CenterProgress"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_112sdp"
+                app:SpinKit_Color="@color/medium_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewCardBG" />
+
+            <ImageView
+                android:id="@+id/ivRefresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:contentDescription="@string/reload_img_description"
+                android:src="@drawable/ic_reload"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewCardBG" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEmptyInformation"
+                style="@style/TextStyle_Regular_16_NoBG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:text="@string/no_record_found"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewCardBG" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardMedicalReviewHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewCardBG">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPrevious"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:src="@drawable/ic_previous_selector"
+                    app:layout_constraintEnd_toStartOf="@id/ivChoose"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivChoose"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:src="@drawable/ic_choose_button"
+                    app:layout_constraintEnd_toStartOf="@id/ivNext"
+                    app:layout_constraintTop_toTopOf="@id/ivPrevious" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivNext"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:src="@drawable/ic_next_selector"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintTop_toTopOf="@id/ivPrevious" />
+
+                <TextView
+                    android:id="@+id/tvDateLbl"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/date_of_review"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSeparator1"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/ivPrevious" />
+
+                <TextView
+                    android:id="@+id/tvSeparator1"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_width="@dimen/_0dp"
+                    android:gravity="center"
+                    android:text="@string/separator_colon"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDate"
+                    app:layout_constraintHorizontal_weight="0.3"
+                    app:layout_constraintStart_toEndOf="@id/tvDateLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvDateLbl" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/tvSeparator1"
+                    app:layout_constraintTop_toTopOf="@id/tvDateLbl" />
+
+                <TextView
+                    android:id="@+id/tvComplaintsLbl"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/chief_complaints"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSeparator2"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/tvDateLbl" />
+
+                <TextView
+                    android:id="@+id/tvSeparator2"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_width="@dimen/_0dp"
+                    android:gravity="center"
+                    android:text="@string/separator_colon"
+                    app:layout_constraintEnd_toStartOf="@+id/tvComplaints"
+                    app:layout_constraintHorizontal_weight="0.3"
+                    app:layout_constraintStart_toEndOf="@id/tvComplaintsLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvComplaintsLbl" />
+
+                <TextView
+                    android:id="@+id/tvComplaints"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/tvSeparator2"
+                    app:layout_constraintTop_toTopOf="@id/tvComplaintsLbl" />
+
+                <TextView
+                    android:id="@+id/tvNotesLbl"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/clinical_notes"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSeparator3"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/tvComplaintsLbl" />
+
+                <TextView
+                    android:id="@+id/tvSeparator3"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_width="@dimen/_0dp"
+                    android:gravity="center"
+                    android:text="@string/separator_colon"
+                    app:layout_constraintEnd_toStartOf="@+id/tvComplaints"
+                    app:layout_constraintHorizontal_weight="0.3"
+                    app:layout_constraintStart_toEndOf="@id/tvNotesLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvNotesLbl" />
+
+                <TextView
+                    android:id="@+id/tvNotes"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/tvSeparator3"
+                    app:layout_constraintTop_toTopOf="@id/tvNotesLbl" />
+
+                <TextView
+                    android:id="@+id/tvExaminationsLbl"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/physical_examinations"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSeparator4"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/tvNotesLbl" />
+
+                <TextView
+                    android:id="@+id/tvSeparator4"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_width="@dimen/_0dp"
+                    android:gravity="center"
+                    android:text="@string/separator_colon"
+                    app:layout_constraintEnd_toStartOf="@+id/tvExaminations"
+                    app:layout_constraintHorizontal_weight="0.3"
+                    app:layout_constraintStart_toEndOf="@id/tvExaminationsLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvExaminationsLbl" />
+
+                <TextView
+                    android:id="@+id/tvExaminations"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/tvSeparator4"
+                    app:layout_constraintTop_toTopOf="@id/tvExaminationsLbl" />
+
+                <TextView
+                    android:id="@+id/tvMedicationLbl"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/medication_prescribed"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSeparator5"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintBottom_toBottomOf="@id/llMedication"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toTopOf="@id/llMedication" />
+
+                <TextView
+                    android:id="@+id/tvSeparator5"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="@string/separator_colon"
+                    app:layout_constraintEnd_toStartOf="@+id/llMedication"
+                    app:layout_constraintStart_toEndOf="@id/tvMedicationLbl"
+                    app:layout_constraintTop_toTopOf="@id/llMedication" />
+
+                <LinearLayout
+                    android:id="@+id/llMedication"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/tvSeparator5"
+                    app:layout_constraintTop_toBottomOf="@id/tvExaminations">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNoMedication"
+                        style="@style/TextStyle_Regular_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="-" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/tvMedication"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/medicationBarrier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="tvMedicationLbl, llMedication, tvSeparator5"/>
+
+                <TextView
+                    android:id="@+id/tvLabTestLbl"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/investigations_referred_cmr"
+                    app:layout_constraintEnd_toStartOf="@+id/tvSeparator6"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="@id/startGuideLine"
+                    app:layout_constraintTop_toBottomOf="@id/medicationBarrier" />
+
+                <TextView
+                    android:id="@+id/tvSeparator6"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/separator_colon"
+                    app:layout_constraintEnd_toStartOf="@+id/llLabTest"
+                    app:layout_constraintStart_toEndOf="@id/tvLabTestLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvLabTestLbl" />
+
+                <LinearLayout
+                    android:id="@+id/llLabTest"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@id/endGuideLine"
+                    app:layout_constraintHorizontal_weight="1"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:layout_constraintStart_toEndOf="@+id/tvSeparator6"
+                    app:layout_constraintTop_toBottomOf="@id/medicationBarrier">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNoLabTest"
+                        style="@style/TextStyle_Regular_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="-" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/tvLabTest"
+                        android:layout_width="wrap_content"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/startGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="359dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/endGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_15sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.NutritionReferralActivity">
+
+    <TextView
+        android:id="@+id/tvNutritionReferral"
+        style="@style/TextStyle_Bold_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_64sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:text="@string/select_nutrition_assessment_and_refer"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/btnRefer"
+        style="@style/Button_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_40sdp"
+        android:background="@drawable/btn_bg_selector"
+        android:enabled="false"
+        android:fontFamily="@font/inter_bold"
+        android:paddingHorizontal="@dimen/_30sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:text="@string/add_assessment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cgAssessment"
+        app:layout_constraintTop_toTopOf="@+id/cgAssessment" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cgAssessment"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/btnRefer"
+        app:layout_constraintStart_toStartOf="@+id/tvNutritionReferral"
+        app:layout_constraintTop_toBottomOf="@+id/tvNutritionReferral"
+        app:layout_constraintBottom_toTopOf="@+id/barrier1"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="cgAssessment,btnRefer"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/_24sdp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSheet"
+        app:layout_constraintTop_toBottomOf="@+id/barrier1">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardReferrals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_40sdp"
+            android:minHeight="@dimen/_250sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvReferredFor"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_24sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:gravity="start"
+                    android:text="@string/referred_for"
+                    app:layout_constraintBottom_toTopOf="@+id/divider"
+                    app:layout_constraintEnd_toStartOf="@+id/tvReferredDate"
+                    app:layout_constraintHorizontal_weight="5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvReferredDate"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:gravity="start"
+                    android:text="@string/date_referred"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvReferredFor"
+                    app:layout_constraintEnd_toStartOf="@+id/tvNotesByClinician"
+                    app:layout_constraintHorizontal_weight="4"
+                    app:layout_constraintStart_toEndOf="@+id/tvReferredFor"
+                    app:layout_constraintTop_toTopOf="@+id/tvReferredFor" />
+
+                <TextView
+                    android:id="@+id/tvNotesByClinician"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:gravity="start"
+                    android:text="@string/notes_by_clinician"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvReferredFor"
+                    app:layout_constraintEnd_toStartOf="@+id/tvAssessedOn"
+                    app:layout_constraintHorizontal_weight="5"
+                    app:layout_constraintStart_toEndOf="@+id/tvReferredDate"
+                    app:layout_constraintTop_toTopOf="@+id/tvReferredFor" />
+
+                <TextView
+                    android:id="@+id/tvAssessedOn"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:gravity="start"
+                    android:text="@string/assessed_on"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvReferredFor"
+                    app:layout_constraintEnd_toStartOf="@+id/tvNutritionist"
+                    app:layout_constraintHorizontal_weight="3"
+                    app:layout_constraintStart_toEndOf="@+id/tvNotesByClinician"
+                    app:layout_constraintTop_toTopOf="@+id/tvReferredFor" />
+
+                <TextView
+                    android:id="@+id/tvNutritionist"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:gravity="start"
+                    android:text="@string/nutritionist"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvReferredFor"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDetails"
+                    app:layout_constraintHorizontal_weight="4"
+                    app:layout_constraintStart_toEndOf="@+id/tvAssessedOn"
+                    app:layout_constraintTop_toTopOf="@+id/tvReferredFor" />
+
+                <TextView
+                    android:id="@+id/tvDetails"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:gravity="start"
+                    android:text="@string/details"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvReferredFor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="3"
+                    app:layout_constraintStart_toEndOf="@+id/tvNutritionist"
+                    app:layout_constraintTop_toTopOf="@+id/tvReferredFor" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/edittext_stroke"
+                    app:layout_constraintBottom_toTopOf="@+id/rvReferrals"
+                    app:layout_constraintTop_toBottomOf="@id/tvReferredFor" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvReferrals"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="@dimen/_50sdp"
+                    app:layout_constraintStart_toStartOf="@+id/tvReferredFor"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvNoAssessmentLabel"
+            style="@style/TextStyle_Regular_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:elevation="9dp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:maxWidth="@dimen/_250sdp"
+            android:text="@string/no_nutrition_assessment_referred"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_20ssp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/cardReferrals"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cardReferrals" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/bottomSheet"
+        layout="@layout/footer_medical_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

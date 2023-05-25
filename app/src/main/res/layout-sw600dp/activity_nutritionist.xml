@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.medicalreview.nutritionist.NutritionistActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_15sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_15sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clProgramId"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/clSmokingStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProgramIdLbl"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/program_id"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvSeparator1"
+                    app:layout_constraintHorizontal_weight="0.45"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeparator1"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/separator_colon"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvProgramId"
+                    app:layout_constraintHorizontal_weight="0.05"
+                    app:layout_constraintStart_toEndOf="@id/tvProgramIdLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvProgramIdLbl" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProgramId"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/separator_hyphen"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@id/tvSeparator1"
+                    app:layout_constraintTop_toTopOf="@id/tvProgramIdLbl" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSmokingStatus"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/clProgramId"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSmokingStatusLbl"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/smoking_status"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvSeparator2"
+                    app:layout_constraintHorizontal_weight="0.45"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeparator2"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/separator_colon"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvSmokingStatus"
+                    app:layout_constraintHorizontal_weight="0.05"
+                    app:layout_constraintStart_toEndOf="@id/tvSmokingStatusLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvSmokingStatusLbl" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSmokingStatus"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/separator_hyphen"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@id/tvSeparator2"
+                    app:layout_constraintTop_toTopOf="@id/tvSmokingStatusLbl" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/clRow1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clNationalId"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/clAlcoholStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNationalIdLbl"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/national_id"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvSeparator3"
+                    app:layout_constraintHorizontal_weight="0.45"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeparator3"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/separator_colon"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvNationalId"
+                    app:layout_constraintHorizontal_weight="0.05"
+                    app:layout_constraintStart_toEndOf="@id/tvNationalIdLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvNationalIdLbl" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNationalId"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/separator_hyphen"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@id/tvSeparator3"
+                    app:layout_constraintTop_toTopOf="@id/tvNationalIdLbl" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAlcoholStatus"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/clNationalId"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAlcoholStatusLbl"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/alcohol_status"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvSeparator4"
+                    app:layout_constraintHorizontal_weight="0.45"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeparator4"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/separator_colon"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvAlcoholStatus"
+                    app:layout_constraintHorizontal_weight="0.05"
+                    app:layout_constraintStart_toEndOf="@id/tvAlcoholStatusLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvAlcoholStatusLbl" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAlcoholStatus"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/separator_hyphen"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@id/tvSeparator4"
+                    app:layout_constraintTop_toTopOf="@id/tvAlcoholStatusLbl" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clRow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/clRow2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPatientRisk"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/clDietNutrition"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPatientRiskLbl"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/patient_risk"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvSeparator5"
+                    app:layout_constraintHorizontal_weight="0.45"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeparator5"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/separator_colon"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvPatientRisk"
+                    app:layout_constraintHorizontal_weight="0.05"
+                    app:layout_constraintStart_toEndOf="@id/tvPatientRiskLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvPatientRiskLbl" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPatientRisk"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/separator_hyphen"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@id/tvSeparator5"
+                    app:layout_constraintTop_toTopOf="@id/tvPatientRiskLbl" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDietNutrition"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/clPatientRisk"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDietNutritionLbl"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/diet_and_nutrition"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvSeparator6"
+                    app:layout_constraintHorizontal_weight="0.45"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeparator6"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/separator_colon"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvDietNutrition"
+                    app:layout_constraintHorizontal_weight="0.05"
+                    app:layout_constraintStart_toEndOf="@id/tvDietNutritionLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvDietNutritionLbl" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDietNutrition"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/separator_hyphen"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@id/tvSeparator6"
+                    app:layout_constraintTop_toTopOf="@id/tvDietNutritionLbl" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clRow4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/clRow3">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBMI"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/clPhysicalActivity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBMILbl"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/bmi"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvSeparator7"
+                    app:layout_constraintHorizontal_weight="0.45"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeparator7"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/separator_colon"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvBMI"
+                    app:layout_constraintHorizontal_weight="0.05"
+                    app:layout_constraintStart_toEndOf="@id/tvBMILbl"
+                    app:layout_constraintTop_toTopOf="@id/tvBMILbl" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBMI"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/separator_hyphen"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@id/tvSeparator7"
+                    app:layout_constraintTop_toTopOf="@id/tvBMILbl" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPhysicalActivity"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/clBMI"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPhysicalActivityLbl"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/physical_activity"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvSeparator8"
+                    app:layout_constraintHorizontal_weight="0.45"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeparator8"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/separator_colon"
+                    android:textColor="@color/b_w_black"
+                    app:layout_constraintEnd_toStartOf="@id/tvPhysicalActivity"
+                    app:layout_constraintHorizontal_weight="0.05"
+                    app:layout_constraintStart_toEndOf="@id/tvPhysicalActivityLbl"
+                    app:layout_constraintTop_toTopOf="@id/tvPhysicalActivityLbl" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPhysicalActivity"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="@dimen/_0dp"
+                    android:text="@string/separator_hyphen"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@id/tvSeparator8"
+                    app:layout_constraintTop_toTopOf="@id/tvPhysicalActivityLbl" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/btnAddLifestyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:elevation="@dimen/_8sdp"
+        android:fontFamily="@font/inter_regular"
+        android:minWidth="@dimen/_120sdp"
+        android:minHeight="@dimen/_45sdp"
+        android:paddingHorizontal="@dimen/_30sdp"
+        android:text="@string/add"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18ssp"
+        app:chipBackgroundColor="@color/cobalt_blue"
+        app:chipEndPadding="@dimen/_10sdp"
+        app:chipMinTouchTargetSize="@dimen/_0dp"
+        app:chipStartPadding="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clHeader" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintBottom_toTopOf="@id/btnDone"
+        app:layout_constraintTop_toBottomOf="@id/btnAddLifestyle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcvNutritionist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/mild_gray"
+                    app:strokeWidth="@dimen/_1sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clRoot"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_5sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivArrow"
+                                android:layout_width="@dimen/_0dp"
+                                android:layout_height="@dimen/_24sdp"
+                                android:padding="@dimen/_8sdp"
+                                app:layout_constraintBottom_toBottomOf="@id/tvReferredFor"
+                                app:layout_constraintEnd_toStartOf="@id/tvReferredFor"
+                                app:layout_constraintHorizontal_weight="0.05"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferredFor"
+                                style="@style/TextStyle_Regular_14"
+                                android:layout_width="@dimen/_0dp"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/referred_for"
+                                app:layout_constraintEnd_toStartOf="@id/tvReferredDate"
+                                app:layout_constraintHorizontal_weight="0.4"
+                                app:layout_constraintStart_toEndOf="@+id/ivArrow"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferredDate"
+                                style="@style/TextStyle_Regular_14"
+                                android:layout_width="@dimen/_0dp"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/referred_date"
+                                app:layout_constraintBottom_toBottomOf="@id/tvReferredFor"
+                                app:layout_constraintEnd_toStartOf="@+id/tvReferredBy"
+                                app:layout_constraintHorizontal_weight="0.2"
+                                app:layout_constraintStart_toEndOf="@+id/tvReferredFor"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferredBy"
+                                style="@style/TextStyle_Regular_14"
+                                android:layout_width="@dimen/_0dp"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/referredBy"
+                                app:layout_constraintBottom_toBottomOf="@id/tvReferredFor"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_weight="0.25"
+                                app:layout_constraintStart_toEndOf="@+id/tvReferredDate"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginVertical="@dimen/_4sdp"
+                            android:background="@color/mild_gray"
+                            app:layout_constraintTop_toBottomOf="@id/clRoot" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvPatientLifestyleList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHeight_max="@dimen/_600sdp"
+                            app:layout_constraintTop_toBottomOf="@+id/view1"
+                            tools:listitem="@layout/layout_nutritionist_adapter" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvNoRecord"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center"
+                            android:text="@string/no_lifestyle_management_referred"
+                            android:textColor="@color/primary_medium_blue"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone"
+                            app:layout_constraintHeight_min="@dimen/_200sdp"
+                            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvViewHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingVertical="@dimen/_15sdp"
+                android:text="@string/view_history"
+                android:textColor="@color/cobalt_blue"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clLifeStyleHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:visibility="gone">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcvNutritionistHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/mild_gray"
+                    app:strokeWidth="@dimen/_1sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clRootHistory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_5sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_weight="1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivArrowHistory"
+                                android:layout_width="@dimen/_0dp"
+                                android:layout_height="@dimen/_24sdp"
+                                android:padding="@dimen/_8sdp"
+                                app:layout_constraintBottom_toBottomOf="@id/tvReferredForHistory"
+                                app:layout_constraintEnd_toStartOf="@id/tvReferredForHistory"
+                                app:layout_constraintHorizontal_weight="0.05"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferredForHistory"
+                                style="@style/TextStyle_Regular_14"
+                                android:layout_width="@dimen/_0dp"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/referred_for"
+                                app:layout_constraintEnd_toStartOf="@id/tvReferredDateHistory"
+                                app:layout_constraintHorizontal_weight="0.4"
+                                app:layout_constraintStart_toEndOf="@+id/ivArrowHistory"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferredDateHistory"
+                                style="@style/TextStyle_Regular_14"
+                                android:layout_width="@dimen/_0dp"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/referred_date"
+                                app:layout_constraintBottom_toBottomOf="@id/tvReferredForHistory"
+                                app:layout_constraintEnd_toStartOf="@+id/tvReferredByHistory"
+                                app:layout_constraintHorizontal_weight="0.2"
+                                app:layout_constraintStart_toEndOf="@+id/tvReferredForHistory"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvReferredByHistory"
+                                style="@style/TextStyle_Regular_14"
+                                android:layout_width="@dimen/_0dp"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:text="@string/referredBy"
+                                app:layout_constraintBottom_toBottomOf="@id/tvReferredForHistory"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_weight="0.25"
+                                app:layout_constraintStart_toEndOf="@+id/tvReferredDateHistory"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:id="@+id/viewHistory"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginVertical="@dimen/_4sdp"
+                            android:background="@color/mild_gray"
+                            app:layout_constraintTop_toBottomOf="@id/clRootHistory" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvHistoryLifestyleList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHeight_max="@dimen/_400sdp"
+                            app:layout_constraintTop_toBottomOf="@+id/viewHistory"
+                            tools:listitem="@layout/layout_nutritionist_adapter" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvNoHistoryRecord"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center"
+                            android:text="@string/no_lifestyle_management_referred"
+                            android:textColor="@color/primary_medium_blue"
+                            android:textSize="@dimen/_16ssp"
+                            android:visibility="gone"
+                            app:layout_constraintHeight_min="@dimen/_200sdp"
+                            app:layout_constraintTop_toBottomOf="@+id/viewHistory" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDone"
+        style="@style/Button_Style"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@drawable/button_selector_cobalt"
+        android:enabled="false"
+        android:minWidth="@dimen/_150sdp"
+        android:paddingHorizontal="@dimen/_30sdp"
+        android:text="@string/done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_10sdp">
+
+        <LinearLayout
+            android:id="@+id/llTest"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvRefDate"
+            app:layout_constraintHorizontal_weight="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDropDown"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_arrow_down"
+                android:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/tvRefferedFor"
+                style="@style/MR_Field_Style"
+                android:layout_width="match_parent"
+                android:paddingStart="@dimen/_0dp"
+                android:paddingEnd="@dimen/_4sdp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvRefDate"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:paddingStart="@dimen/_0dp"
+            android:paddingEnd="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvRefBy"
+            app:layout_constraintHorizontal_weight="0.4"
+            app:layout_constraintStart_toEndOf="@+id/llTest"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRefBy"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:paddingStart="@dimen/_0dp"
+            android:paddingEnd="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvAssessedDate"
+            app:layout_constraintHorizontal_weight="0.55"
+            app:layout_constraintStart_toEndOf="@+id/tvRefDate"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAssessedDate"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:paddingStart="@dimen/_0dp"
+            android:paddingEnd="@dimen/_4sdp"
+            android:text="@string/not_assessed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvAssessedBy"
+            app:layout_constraintHorizontal_weight="0.4"
+            app:layout_constraintStart_toEndOf="@+id/tvRefBy"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAssessedBy"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/llMenus"
+            app:layout_constraintHorizontal_weight="0.55"
+            app:layout_constraintStart_toEndOf="@+id/tvAssessedDate"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/llMenus"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_0dp"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:flow_maxElementsWrap="2"
+            app:layout_constraintHeight_min="@dimen/_32sdp"
+            app:justifyContent="flex_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvAssessedBy"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRemove"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:background="@drawable/button_white_background"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_close_error"
+                android:tint="@color/cobalt_blue"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDelete"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:background="@drawable/action_button_bg"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_6sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:backgroundTint="@color/a_red_error"
+                android:src="@drawable/ic_bin"
+                android:tint="@color/a_red_error"
+                android:visibility="gone"  />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/resultsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_medium_blue_bg"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:visibility="gone">
+
+        <include
+            android:id="@+id/clinicianNotesLayout"
+            layout="@layout/lifestyle_result_layout"/>
+
+        <include
+            android:id="@+id/assessmentNotesLayout"
+            layout="@layout/lifestyle_result_layout"/>
+
+        <include
+            android:id="@+id/otherNotesLayout"
+            layout="@layout/lifestyle_result_layout" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/headerDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/resultsLayout" />
+
+</LinearLayout>

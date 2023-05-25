@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CardView_Style"
+                android:layout_marginVertical="@dimen/_6sdp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/card_background">
+
+                        <TextView
+                            android:id="@+id/bioDataCardTitle"
+                            style="@style/Form_Header_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:gravity="center"
+                            android:paddingHorizontal="@dimen/_16sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/bio_data"
+                            android:textSize="@dimen/_16ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_20sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/_16sdp">
+
+                            <TextView
+                                android:visibility="gone"
+                                android:id="@+id/tvNationIdTitle"
+                                style="@style/Form_Label_Style"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:text="@string/national_id_program_id"
+                                tools:ignore="RtlSymmetry" />
+
+                            <LinearLayout
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="@dimen/_8sdp"
+                                android:background="@drawable/edittext_background"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etNationalIdUserInput"
+                                    style="@style/Form_Input_Style"
+                                    android:layout_width="@dimen/_0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.8"
+                                    android:paddingHorizontal="@dimen/_12sdp"
+                                    android:paddingVertical="@dimen/_10sdp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivNationalIDConfirm"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/edit_text_action_selector"
+                                    android:src="@drawable/ic_tick_mark_24"
+                                    android:visibility="visible" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvNationalIdErrorMessage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/TextStyle_Error_14"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/llPatientInfo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <include
+                                    android:id="@+id/nationalId"
+                                    layout="@layout/summary_layout" />
+
+                                <include
+                                    android:id="@+id/patientName"
+                                    layout="@layout/summary_layout" />
+
+                                <include
+                                    android:id="@+id/gender"
+                                    layout="@layout/summary_layout" />
+
+                                <include
+                                    android:id="@+id/dobAge"
+                                    layout="@layout/summary_layout" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llPatientEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <include
+                                android:id="@+id/llName"
+                                layout="@layout/edittext_layout" />
+
+                            <include
+                                android:id="@+id/llLastName"
+                                layout="@layout/edittext_layout" />
+
+                            <include
+                                android:id="@+id/llGender"
+                                layout="@layout/radio_group_layout" />
+
+                            <include
+                                android:id="@+id/llAge"
+                                layout="@layout/age_dob_layout" />
+
+                            <include
+                                android:id="@+id/llTobacco"
+                                layout="@layout/radio_group_layout" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <include
+                android:id="@+id/symptomCard"
+                layout="@layout/layout_symptoms_complaince" />
+
+
+            <LinearLayout
+                android:id="@+id/llForm"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

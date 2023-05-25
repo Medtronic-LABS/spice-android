@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_16sdp"
+    android:paddingVertical="@dimen/_12sdp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Form_Label_Style"
+        android:paddingEnd="@dimen/_10sdp"
+        tools:ignore="RtlSymmetry" />
+
+    <RadioGroup
+        android:id="@+id/radioGrpDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbToday"
+            style="@style/RadioButton_General"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/today"
+            android:textColor="@color/enabled_disbled_color"
+            android:textSize="@dimen/_14ssp" />
+
+        <RadioButton
+            android:id="@+id/rbYesterday"
+            style="@style/RadioButton_General"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/yesterday"
+            android:textColor="@color/enabled_disbled_color"
+            android:textSize="@dimen/_14ssp" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etHour"
+            style="@style/Form_Age_Box_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_weight="0.25"
+            android:digits="0123456789"
+            android:hint="@string/hr"
+            android:maxLength="2"
+            android:paddingVertical="@dimen/_12sdp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etMinute"
+            style="@style/Form_Age_Box_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_weight="0.25"
+            android:digits="0123456789"
+            android:hint="@string/min"
+            android:maxLength="2"
+            android:paddingVertical="@dimen/_12sdp" />
+
+        <RadioGroup
+            android:id="@+id/timeRadioGroup"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/amBtn"
+                style="@style/RadioButton_General"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/am"
+                android:textColor="@color/enabled_disbled_color"
+                android:textSize="@dimen/_14ssp" />
+
+            <RadioButton
+                android:id="@+id/pmBtn"
+                style="@style/RadioButton_General"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/pm"
+                android:textColor="@color/enabled_disbled_color"
+                android:textSize="@dimen/_14ssp" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvErrorMessage"
+        style="@style/TextStyle_Error_14"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardComorbidity"
+        style="@style/CardView_Style"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/viewComorbidityBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/tvComorbidityTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvComorbidityTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/comorbidities"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewComorbidityBG"
+                app:layout_constraintStart_toStartOf="@id/viewComorbidityBG"
+                app:layout_constraintTop_toTopOf="@id/viewComorbidityBG" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/llComorbidityRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/viewComorbidityBG" />
+
+            <LinearLayout
+                android:id="@+id/etOtherComorbidityHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llComorbidityRoot">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvComorbidityLbl"
+                    style="@style/Form_Label_Style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:text="@string/please_specify_the_comorbidity" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOtherComorbidity"
+                    style="@style/Form_Input_Style_BG"
+                    android:layout_height="@dimen/_112sdp"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:gravity="start|top"
+                    android:inputType="textCapWords"
+                    android:hint="@string/other_comorbidity"
+                    android:padding="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/tvErrorOtherComorbidity"
+                    style="@style/TextStyle_Error_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardComplicationsHolder"
+        style="@style/CardView_Style"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardComorbidity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/viewComplicationsBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/tvComplicationsTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvComplicationsTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/complications"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewComplicationsBG"
+                app:layout_constraintStart_toStartOf="@id/viewComplicationsBG"
+                app:layout_constraintTop_toTopOf="@id/viewComplicationsBG" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/llComplicationsRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/viewComplicationsBG" />
+
+            <LinearLayout
+                android:id="@+id/etOtherComplicationsHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llComplicationsRoot">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvComplicationLbl"
+                    style="@style/Form_Label_Style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:text="@string/please_specify_the_complication"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOtherComplications"
+                    style="@style/Form_Input_Style_BG"
+                    android:layout_height="@dimen/_112sdp"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:gravity="start|top"
+                    android:inputType="textCapWords"
+                    android:hint="@string/other_complication"
+                    android:padding="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/tvErrorOtherComplication"
+                    style="@style/TextStyle_Error_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

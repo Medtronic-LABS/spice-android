@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardView_Style"
+        android:layout_marginVertical="@dimen/_6sdp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/viewSymptomCardBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/cardSymptomTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/cardSymptomTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewSymptomCardBG"
+                app:layout_constraintStart_toStartOf="@id/viewSymptomCardBG"
+                app:layout_constraintTop_toTopOf="@id/viewSymptomCardBG" />
+
+            <LinearLayout
+                android:id="@+id/llSymptomFamilyRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/viewSymptomCardBG">
+
+                <include
+                    android:id="@+id/symptomsSpinner"
+                    layout="@layout/spinner_layout" />
+
+                <include
+                    android:id="@+id/otherHypertensionSymptom"
+                    layout="@layout/edittext_layout"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/otherDiabetesSymptom"
+                    layout="@layout/edittext_layout"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/complianceSpinner"
+                    layout="@layout/custom_spinner" />
+
+                <RadioGroup
+                    android:id="@+id/childCompliance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_30sdp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/otherComplianceReason"
+                    style="@style/TextStyle_Regular_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="@string/other_hint"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvChildErrorMessage"
+                    style="@style/TextStyle_Error_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_30sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

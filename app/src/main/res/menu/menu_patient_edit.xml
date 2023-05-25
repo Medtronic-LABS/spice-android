@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/patient_edit"
+        android:icon="@drawable/ic_edit_menu"
+        android:title="@string/edit" />
+
+    <item
+        android:id="@+id/transfer_patient"
+        android:icon="@drawable/ic_patient_transfer"
+        android:title="@string/transfer" />
+
+    <item android:id="@+id/patient_delete"
+        android:icon="@drawable/ic_delete_blue"
+        android:title="@string/delete"/>
+
+</menu>

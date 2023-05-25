@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/screening_sold_bg" />
+    <stroke
+        android:width="@dimen/_1sdp"
+
+        android:color="@color/blue" />
+    <corners android:radius="@dimen/_8sdp" />
+</shape>

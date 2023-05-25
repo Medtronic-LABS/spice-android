@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.medicalreview.fragment.LifeStyleFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardView_Style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_6sdp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/viewLifeStyleBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/tvLifeStyleTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLifeStyleTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/lifestyle_status_"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewLifeStyleBG"
+                app:layout_constraintStart_toStartOf="@id/viewLifeStyleBG"
+                app:layout_constraintTop_toTopOf="@id/viewLifeStyleBG" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEmptyInformation"
+                style="@style/TextStyle_Regular_16_NoBG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:text="@string/no_record_found"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewCardBG" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/CenterProgress"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_112sdp"
+                app:SpinKit_Color="@color/medium_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewLifeStyleBG" />
+
+            <ImageView
+                android:id="@+id/ivRefresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:contentDescription="@string/reload_img_description"
+                android:src="@drawable/ic_reload"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewCardBG" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clLifeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewCardBG">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.25" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.50" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl75"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.75" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glH70"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.65" />
+
+                <ImageView
+                    android:id="@+id/ivSmoking"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/lifestyle_smoking"
+                    android:src="@drawable/ic_lifestyle_smoking"
+                    app:layout_constraintBottom_toTopOf="@id/glH70"
+                    app:layout_constraintEnd_toEndOf="@+id/gl25"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvSmoking"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_15sdp"
+                    android:text="@string/lifestyle_smoking"
+                    android:textColor="@color/medium_blue"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/gl25"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/glH70" />
+
+                <ImageView
+                    android:id="@+id/ivAlcohol"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/lifestyle_alcohol"
+                    android:src="@drawable/ic_lifestyle_alcohol"
+                    app:layout_constraintBottom_toTopOf="@id/glH70"
+                    app:layout_constraintEnd_toEndOf="@+id/gl50"
+                    app:layout_constraintStart_toStartOf="@id/gl25" />
+
+                <TextView
+                    android:id="@+id/tvAlcohol"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_15sdp"
+                    android:text="@string/lifestyle_alcohol"
+                    android:textColor="@color/medium_blue"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/gl50"
+                    app:layout_constraintStart_toStartOf="@id/gl25"
+                    app:layout_constraintTop_toBottomOf="@id/glH70" />
+
+                <ImageView
+                    android:id="@+id/ivDietNutrition"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/lifestyle_diet_nutrition"
+                    android:src="@drawable/ic_lifestyle_unhealthy_food"
+                    app:layout_constraintBottom_toTopOf="@id/glH70"
+                    app:layout_constraintEnd_toEndOf="@+id/gl75"
+                    app:layout_constraintStart_toStartOf="@id/gl50" />
+
+                <TextView
+                    android:id="@+id/tvDietNutrition"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/_15sdp"
+                    android:text="@string/lifestyle_diet_nutrition"
+                    android:textColor="@color/medium_blue"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/gl75"
+                    app:layout_constraintStart_toStartOf="@id/gl50"
+                    app:layout_constraintTop_toBottomOf="@id/glH70" />
+
+                <ImageView
+                    android:id="@+id/ivPhysicalActivity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/lifestyle_physical_activity"
+                    android:src="@drawable/ic_lifestyle_physical_activity"
+                    app:layout_constraintBottom_toTopOf="@id/glH70"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/gl75" />
+
+                <TextView
+                    android:id="@+id/tvPhysicalActivity"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/_15sdp"
+                    android:text="@string/lifestyle_physical_activity"
+                    android:textColor="@color/medium_blue"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/gl75"
+                    app:layout_constraintTop_toBottomOf="@id/glH70" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

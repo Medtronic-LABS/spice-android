@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".ui.boarding.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPrevious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_32sdp"
+                android:contentDescription="@string/logo_description"
+                android:src="@drawable/ic_spice_logo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextStyle_Bold_16_NoBG"
+                android:padding="@dimen/_4sdp"
+                android:text="@string/welcome"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextStyle_Medium_20"
+                android:gravity="center"
+                android:text="@string/login_to_your_account"
+                android:textColor="@color/navy_blue" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_24sdp"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserNameLabel"
+                    style="@style/TextStyle_Regular_14"
+                    android:text="@string/email" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlUserName"
+                    android:longClickable="false"
+                    android:importantForAutofill="no"
+                    style="@style/Input_LayoutStyle_withoutToggle"
+                    android:layout_marginVertical="@dimen/_8sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userName"
+                        style="@style/TextStyle_Regular_16_Rectangle_Bg"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:gravity="start"
+                        android:hint="@string/email_place_holder"
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress"
+                        android:minWidth="@dimen/_360sdp"
+                        android:padding="@dimen/_12sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvUserEmailError"
+                    style="@style/TextStyle_Error_12"
+                    android:visibility="gone" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPasswordLabel"
+                    style="@style/TextStyle_Regular_14"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:text="@string/password" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Input_LayoutStyle"
+                    android:id="@+id/passwordLayout"
+                    android:longClickable="false"
+                    android:layout_marginVertical="@dimen/_8sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password"
+                        style="@style/TextStyle_Regular_16_Rectangle_Bg"
+                        android:hint="@string/password_place_holder"
+                        android:importantForAutofill="no"
+                        android:inputType="textPassword"
+                        android:minWidth="@dimen/_360sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:tag="@string/hide"
+                        app:layout_constraintEnd_toStartOf="@+id/ivPasswordToggle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    android:id="@+id/tvUserPasswordError"
+                    style="@style/TextStyle_Error_12"
+                    android:visibility="gone" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkboxRememberMe"
+                        style="@style/CheckBox_Style"
+                        android:text="@string/remember_me"
+                        android:visibility="gone" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnLogin"
+                    style="@style/Button_Style"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/login" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvForgotPassword"
+                    style="@style/Button_Style_Plain"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:text="@string/forgot_password"
+                    android:textColor="@color/blue" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/errorCardMessage"
+            style="@style/CardView_Style"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="@dimen/_26sdp"
+            android:layout_marginBottom="@dimen/_26sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivClose"
+                    style="@style/ImageView_Style"
+                    android:contentDescription="@string/close"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_close_error"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvErrorMessage"
+                    style="@style/TextStyle_Error_16"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:padding="@dimen/_15sdp"
+                    android:text="@string/incorrect_username_password"
+                    app:drawableStartCompat="@drawable/ic_info_red"
+                    app:layout_constraintEnd_toStartOf="@+id/ivClose"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_24sdp"
+    android:layout_marginHorizontal="@dimen/_2sdp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_12sdp">
+
+    <LinearLayout
+        android:background="@drawable/bg_custom_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/_12sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_24sdp"
+            android:paddingVertical="@dimen/_4sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAssessmentDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_16ssp"
+                android:text="@string/test_name"
+                android:textColor="@color/b_w_black"
+                android:fontFamily="@font/inter_regular"
+                android:padding="@dimen/_8sdp"
+                android:gravity="start"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.35"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRandomBloodSugar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_16ssp"
+                android:text="@string/referred_on"
+                android:textColor="@color/b_w_black"
+                android:fontFamily="@font/inter_regular"
+                android:padding="@dimen/_8sdp"
+                android:gravity="start"
+                app:layout_constraintTop_toTopOf="@id/tvAssessmentDate"
+                app:layout_constraintStart_toEndOf="@id/tvAssessmentDate"
+                app:layout_constraintWidth_percent="0.25"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFastingBloodSugar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_16ssp"
+                android:text="@string/referred_by"
+                android:gravity="start"
+                android:textColor="@color/b_w_black"
+                android:fontFamily="@font/inter_regular"
+                android:padding="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_100sdp"
+                app:layout_constraintTop_toTopOf="@id/tvAssessmentDate"
+                app:layout_constraintStart_toEndOf="@id/tvRandomBloodSugar"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:background="@color/mild_gray" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLabTestList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNoRecord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@string/no_lab_test_added"
+            android:textSize="@dimen/_16ssp"
+            android:textColor="@color/primary_medium_blue"
+            android:fontFamily="@font/inter_regular"
+            android:padding="@dimen/_8sdp"
+            android:gravity="center"
+            android:layout_marginVertical="@dimen/_24sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

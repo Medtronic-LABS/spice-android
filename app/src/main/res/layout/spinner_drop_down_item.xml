@@ -1,0 +1,12 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerItemStyle"
+    android:singleLine="true"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_42sdp"
+    android:gravity="center_vertical"
+    android:ellipsize="marquee"
+    android:background="@drawable/edittext_background"
+    android:textAlignment="inherit"
+    app:drawableEndCompat="@drawable/ic_arrow_down" />

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_16sdp"
+    android:paddingVertical="@dimen/_12sdp">
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:paddingStart="@dimen/_0dp"
+        android:paddingEnd="@dimen/_10sdp"
+        style="@style/Form_Label_Style" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/etUserInput"
+        style="@style/Form_Input_Style_BG"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:drawableEnd="@drawable/ic_baseline_calendar_today_24"
+        android:padding="@dimen/_8sdp"/>
+
+
+    <TextView
+        android:id="@+id/tvErrorMessage"
+        style="@style/TextStyle_Error_14"
+        android:paddingVertical="@dimen/_8sdp"
+        android:visibility="gone" />
+
+
+</LinearLayout>

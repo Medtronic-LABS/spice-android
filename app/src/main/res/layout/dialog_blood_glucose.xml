@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardView_Style"
+            android:layout_marginVertical="@dimen/_6sdp"
+            app:cardUseCompatPadding="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.medtroniclabs.opensource.custom.DialogTitleFrameLayout
+                    android:id="@+id/titleCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:dialogTitle="@string/blood_glucose"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAssessmentDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="@string/assessment_date"
+                    android:textColor="@color/charcoal_grey"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="@dimen/_8sdp"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/titleCard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintWidth_percent="0.25"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRandomBloodSugar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="@string/glucose_rbs"
+                    android:textColor="@color/charcoal_grey"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="@dimen/_8sdp"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="@id/tvAssessmentDate"
+                    app:layout_constraintStart_toEndOf="@id/tvAssessmentDate"
+                    app:layout_constraintWidth_percent="0.25"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFastingBloodSugar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="@string/glucose_fbs"
+                    android:gravity="center"
+                    android:textColor="@color/charcoal_grey"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintTop_toTopOf="@id/tvAssessmentDate"
+                    app:layout_constraintStart_toEndOf="@id/tvRandomBloodSugar"
+                    app:layout_constraintWidth_percent="0.25"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHbA1c"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="@string/glucose_hba1c"
+                    android:gravity="center"
+                    android:textColor="@color/charcoal_grey"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintTop_toTopOf="@id/tvAssessmentDate"
+                    app:layout_constraintStart_toEndOf="@id/tvFastingBloodSugar"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:id="@+id/dividerOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/edittext_stroke"
+                    app:layout_constraintTop_toBottomOf="@id/tvAssessmentDate" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBloodGlucose"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_320sdp"
+                    android:scrollbarSize="@dimen/_4sdp"
+                    android:scrollbarThumbVertical="@color/blue"
+                    android:scrollbars="vertical"
+                    app:layout_constraintBottom_toTopOf="@id/btnAddNew"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dividerOne"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnAddNew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_white_background"
+                    android:drawableStart="@drawable/ic_add_reading"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center"
+                    android:text="@string/add_new_reading"
+                    android:textColor="@color/cobalt_blue"
+                    android:textSize="@dimen/_20ssp"
+                    android:layout_marginStart="@dimen/_24sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:paddingHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvBloodGlucose" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/loadingProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/spin_kit"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loader_spice" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

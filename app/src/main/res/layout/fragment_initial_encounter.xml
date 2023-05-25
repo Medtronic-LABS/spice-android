@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardDiagnosisHolder"
+        style="@style/CardView_Style"
+        android:visibility="gone"
+        android:layout_width="@dimen/_0dp"
+        app:layout_constraintEnd_toStartOf="@id/cardHypertensionHolder"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/viewDiabetesCardBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/tvDiabetesTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDiabetesTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/diabetes"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewDiabetesCardBG"
+                app:layout_constraintStart_toStartOf="@id/viewDiabetesCardBG"
+                app:layout_constraintTop_toTopOf="@id/viewDiabetesCardBG" />
+
+            <LinearLayout
+                android:id="@+id/llDiabetesRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/viewDiabetesCardBG">
+
+                <TextView
+                    android:id="@+id/tvDiabetesRootTitle"
+                    style="@style/Form_Label_Style"
+                    android:text="@string/diabetes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/rgDiabetes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDiabetesRootTitle">
+
+                    <RadioButton
+                        android:id="@+id/rbDiabetesNa"
+                        style="@style/RadioButton_General"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:text="@string/n_a" />
+
+
+                    <RadioButton
+                        android:id="@+id/rbDiabetesNewPatient"
+                        style="@style/RadioButton_General"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:text="@string/new_patient" />
+
+
+                    <RadioButton
+                        android:id="@+id/rbDiabetesKnownPatient"
+                        style="@style/RadioButton_General"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:text="@string/known_patient" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llDiabetesYearDiagnosisHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="@dimen/_24sdp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvYearOfDiabetesDiagnosisTitle"
+                        style="@style/Form_Label_Style"
+                        android:text="@string/year_of_diagnosis"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etUserInputDiabetes"
+                        style="@style/Form_Input_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/edittext_background"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:minWidth="@dimen/_360sdp"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp" />
+
+
+                    <TextView
+                        android:id="@+id/tvDiabetesControlledTypeTitle"
+                        style="@style/Form_Label_Style"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:text="@string/diabetes_controlled_type"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/etDiabetesControlledUserInput"
+                        style="@style/Form_Spinner_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_30sdp"
+                        android:minHeight="@dimen/_40sdp" />
+
+
+                    <TextView
+                        android:id="@+id/tvDiabetesTypeTitle"
+                        style="@style/Form_Label_Style"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:text="@string/diabetes_type"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/etDiabetesTypeUserInput"
+                        style="@style/Form_Spinner_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_30sdp"
+                        android:minHeight="@dimen/_40sdp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvDiabetesErrorMessage"
+                    style="@style/TextStyle_Error_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHypertensionHolder"
+        style="@style/CardView_Style"
+        android:layout_width="@dimen/_0dp"
+        app:cardUseCompatPadding="true"
+        android:visibility="gone"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cardDiagnosisHolder"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/viewHypertensionCardBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/tvHypertensionTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHypertensionTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/hypertension"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewHypertensionCardBG"
+                app:layout_constraintStart_toStartOf="@id/viewHypertensionCardBG"
+                app:layout_constraintTop_toTopOf="@id/viewHypertensionCardBG" />
+
+            <LinearLayout
+                android:id="@+id/llHypertensionRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/viewHypertensionCardBG">
+
+                <TextView
+                    android:id="@+id/tvHypertensionLabel"
+                    style="@style/Form_Label_Style"
+                    android:text="@string/hypertension"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/rgHypertension"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHypertensionLabel">
+
+                    <RadioButton
+                        android:id="@+id/rbHypertensionNa"
+                        style="@style/RadioButton_General"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:text="@string/n_a" />
+
+
+                    <RadioButton
+                        android:id="@+id/rbHypertensionNewPatient"
+                        style="@style/RadioButton_General"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:text="@string/new_patient" />
+
+
+                    <RadioButton
+                        android:id="@+id/rbHypertensionKnownPatient"
+                        style="@style/RadioButton_General"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:text="@string/known_patient" />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/llHTNYearDiagnosisHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="@dimen/_24sdp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvYearOfHTNDiagnosisTitle"
+                        style="@style/Form_Label_Style"
+                        android:text="@string/year_of_diagnosis"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etUserInputHTN"
+                        style="@style/Form_Input_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/edittext_background"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:minWidth="@dimen/_360sdp"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvHypertensionErrorMessage"
+                    style="@style/TextStyle_Error_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="cardHypertensionHolder, cardDiagnosisHolder" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMentalHealthHolder"
+        style="@style/CardView_Style"
+        android:layout_width="@dimen/_0dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrierOne"
+        app:layout_constraintWidth_percent="0.5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/viewMentalHealthBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/tvMentalHealthTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMentalHealthTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/mental_health"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewMentalHealthBG"
+                app:layout_constraintStart_toStartOf="@id/viewMentalHealthBG"
+                app:layout_constraintTop_toTopOf="@id/viewMentalHealthBG" />
+
+            <LinearLayout
+                android:id="@+id/llMentalHealthRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/viewMentalHealthBG">
+
+                <TextView
+                    android:id="@+id/tvMentalHealthLabel"
+                    style="@style/Form_Label_Style"
+                    android:text="@string/recommended_assessment"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/phq9Holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:paddingVertical="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/btnStartPHQ9Assessment"
+                        style="@style/Button_Style_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_20sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/start_assessment"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tvPHQ9Title"
+                        style="@style/TextStyle_Regular_16_Blue"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/phq9_display"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPHQ9Score"
+                        android:layout_width="@dimen/_0dp"
+                        style="@style/TextStyle_Regular_16_Blue"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvPHQ9Title"
+                        app:layout_constraintEnd_toStartOf="@id/btnStartPHQ9Assessment"
+                        app:layout_constraintStart_toEndOf="@id/tvPHQ9Title"
+                        app:layout_constraintTop_toTopOf="@id/tvPHQ9Title" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/gad7Holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:paddingVertical="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/btnStartGAD7Assessment"
+                        style="@style/Button_Style_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_20sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/start_assessment"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tvGAD7Title"
+                        style="@style/TextStyle_Regular_16_Blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/gad7_display"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvGAD7Score"
+                        android:layout_width="@dimen/_0dp"
+                        style="@style/TextStyle_Regular_16_Blue"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvGAD7Title"
+                        app:layout_constraintEnd_toStartOf="@id/btnStartGAD7Assessment"
+                        app:layout_constraintStart_toEndOf="@id/tvGAD7Title"
+                        app:layout_constraintTop_toTopOf="@id/tvGAD7Title" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/phq4Holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:paddingVertical="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/btnStartPhq4Assessment"
+                        style="@style/Button_Style_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_20sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/start_assessment"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tvPHQ4Title"
+                        style="@style/TextStyle_Regular_16_Blue"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/phq4_display"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/btnStartPhq4Assessment"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPHQ4Score"
+                        android:layout_width="@dimen/_0dp"
+                        style="@style/TextStyle_Regular_16_Blue"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvPHQ4Title"
+                        app:layout_constraintEnd_toStartOf="@id/btnStartPhq4Assessment"
+                        app:layout_constraintStart_toEndOf="@id/tvPHQ4Title"
+                        app:layout_constraintTop_toTopOf="@id/tvPHQ4Title" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvNoAssessmentLabel"
+                    style="@style/TextStyle_Regular_16_Blue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_20sdp"
+                    android:text="@string/separator_hyphen"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvMentalHealthErrorMessage"
+                    style="@style/TextStyle_Error_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPregnancyHolder"
+        style="@style/CardView_Style"
+        android:layout_width="@dimen/_0dp"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:visibility="gone"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cardMentalHealthHolder"
+        app:layout_constraintTop_toBottomOf="@+id/barrierOne"
+        app:layout_constraintWidth_percent="0.5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/viewPregnancyBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/tvPregnancyTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPregnancyTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/pregnancy"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewPregnancyBG"
+                app:layout_constraintStart_toStartOf="@id/viewPregnancyBG"
+                app:layout_constraintTop_toTopOf="@id/viewPregnancyBG" />
+
+            <LinearLayout
+                android:id="@+id/llPregnancyRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/viewPregnancyBG">
+
+                <TextView
+                    android:id="@+id/tvPregnancyLabel"
+                    style="@style/Form_Label_Style"
+                    android:text="@string/pregnant"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHypertensionLabel">
+
+                    <RadioGroup
+                        android:id="@+id/rgPregnancy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rbPregnancyNa"
+                            style="@style/RadioButton_General"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:text="@string/not_pregnant" />
+
+
+                        <RadioButton
+                            android:id="@+id/rbPregnancy"
+                            style="@style/RadioButton_General"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:text="@string/pregnant" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/btnEditPregnancy"
+                        style="@style/Button_Style_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_20sdp"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/add_pregnancy_details"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/tvPregnancyErrorMessage"
+                    style="@style/TextStyle_Error_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardCurrentMedicationDetailsHolder"
+        style="@style/CardView_Style"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:visibility="gone"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardMentalHealthHolder">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/viewCurrentMedicationDetailsBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/tvCurrentMedicationDetailsTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCurrentMedicationDetailsTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/current_medication_details"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewCurrentMedicationDetailsBG"
+                app:layout_constraintStart_toStartOf="@id/viewCurrentMedicationDetailsBG"
+                app:layout_constraintTop_toTopOf="@id/viewCurrentMedicationDetailsBG" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/currentMedicationTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewCurrentMedicationDetailsBG" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOtherCurrentMedication"
+                style="@style/Form_Input_Style_BG"
+                android:layout_height="@dimen/_112sdp"
+                android:layout_margin="@dimen/_16sdp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="start|top"
+                android:hint="@string/other_medication"
+                android:padding="@dimen/_8sdp"
+                android:inputType="textCapWords|textMultiLine"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currentMedicationTags" />
+
+
+            <TextView
+                android:id="@+id/tvErrorOtherCurrentMedications"
+                style="@style/TextStyle_Error_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16sdp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/etOtherCurrentMedication" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llCurrentMedications"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvErrorOtherCurrentMedications"
+                app:layout_constraintWidth_percent="0.45">
+
+                <TextView
+                    android:id="@+id/tvCurrentMedicationsTitle"
+                    style="@style/Form_Label_Style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:text="@string/adhering_to_current_medications"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/rgCurrentMedications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCurrentMedicationsTitle">
+
+                    <RadioButton
+                        android:id="@+id/rbCurrentMedicationYes"
+                        style="@style/RadioButton_General"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/yes"
+                        android:textColor="@color/enabled_disbled_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <RadioButton
+                        android:id="@+id/rbCurrentMedicationNo"
+                        style="@style/RadioButton_General"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/no"
+                        android:textColor="@color/enabled_disbled_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etCommentCurrentMedication"
+                    style="@style/Form_Input_Style_BG"
+                    android:layout_height="@dimen/_112sdp"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:gravity="start|top"
+                    android:hint="@string/comment_current_medication"
+                    android:padding="@dimen/_8sdp"
+                    android:inputType="textCapWords|textMultiLine"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rgCurrentMedications" />
+
+                <TextView
+                    android:id="@+id/tvErrorCurrentMedications"
+                    style="@style/TextStyle_Error_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etCommentCurrentMedication" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llAllergiesToDrugs"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@id/llCurrentMedications"
+                app:layout_constraintTop_toBottomOf="@+id/tvErrorOtherCurrentMedications"
+                app:layout_constraintWidth_percent="0.45">
+
+                <TextView
+                    android:id="@+id/tvAllergiesToDrugsTitle"
+                    style="@style/Form_Label_Style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:text="@string/allergies_to_drugs"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/rgAllergiesToDrugs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAllergiesToDrugsTitle">
+
+                    <RadioButton
+                        android:id="@+id/rbAllergiesToDrugsYes"
+                        style="@style/RadioButton_General"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/yes"
+                        android:textColor="@color/enabled_disbled_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <RadioButton
+                        android:id="@+id/rbAllergiesToDrugsNo"
+                        style="@style/RadioButton_General"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/no"
+                        android:textColor="@color/enabled_disbled_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etCommentAllergies"
+                    style="@style/Form_Input_Style_BG"
+                    android:layout_height="@dimen/_112sdp"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:gravity="start|top"
+                    android:hint="@string/other_allergies"
+                    android:padding="@dimen/_8sdp"
+                    android:inputType="textCapWords|textMultiLine"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rgAllergiesToDrugs" />
+
+
+                <TextView
+                    android:id="@+id/tvErrorAllergiesToDrugs"
+                    style="@style/TextStyle_Error_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etCommentAllergies" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <FrameLayout
+        android:id="@+id/comorbidityContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardCurrentMedicationDetailsHolder" />
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardView_Style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/comorbidityContainer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/viewLifeStyleBG"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0dp"
+                android:background="@color/card_background"
+                app:layout_constraintBottom_toBottomOf="@id/tvLifeStyleTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLifeStyleTitle"
+                style="@style/Form_Header_Style"
+                android:layout_width="@dimen/_0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/lifestyle_assessment"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="@id/viewLifeStyleBG"
+                app:layout_constraintStart_toStartOf="@id/viewLifeStyleBG"
+                app:layout_constraintTop_toTopOf="@id/viewLifeStyleBG" />
+
+            <TextView
+                android:id="@+id/tvErrorLifeStyle"
+                style="@style/TextStyle_Error_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tvLifeStyleTitle" />
+
+            <LinearLayout
+                android:id="@+id/llLifeStyleParentHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tvErrorLifeStyle" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardLifeStyleHolder"
+            style="@style/CardView_Style"
+            android:layout_marginVertical="@dimen/_6sdp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardComplicationsHolder">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/viewLifeStyleBG"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_0dp"
+                    android:background="@color/card_background"
+                    app:layout_constraintBottom_toBottomOf="@id/tvLifeStyleTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvLifeStyleTitle"
+                    style="@style/Form_Header_Style"
+                    android:layout_width="@dimen/_0dp"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:text="@string/lifestyle_management"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toEndOf="@id/viewLifeStyleBG"
+                    app:layout_constraintStart_toStartOf="@id/viewLifeStyleBG"
+                    app:layout_constraintTop_toTopOf="@id/viewLifeStyleBG" />
+
+                <LinearLayout
+                    android:id="@+id/llLifeStyleParentHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_16sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLifeStyleTitle" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cigarettes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_22sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLifeStyleTitle">
+
+                    <TextView
+                        android:id="@+id/tvCigaretteQuestion"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_0dp"
+                        android:text="@string/lifestyle_question_cigarettes"h
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/oldCigaretteCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_9sdp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCigaretteQuestion">
+
+                        <TextView
+                            android:id="@+id/btnCigaretteNo"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/left_mh_view_selector"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/no" />
+
+                        <TextView
+                            android:id="@+id/btnCigaretteYesInPast"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/yes_in_past" />
+
+                        <TextView
+                            android:id="@+id/btnCigaretteYes"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/yes" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/alcohol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_22sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cigarettes">
+
+                    <TextView
+                        android:id="@+id/tvAlcoholQuestion"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_0dp"
+                        android:text="@string/lifestyle_question_alcohol"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/oldCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_9sdp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAlcoholQuestion">
+
+                        <TextView
+                            android:id="@+id/btnAlcoholNo"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/left_mh_view_selector"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/no" />
+
+                        <TextView
+                            android:id="@+id/btnAlcoholYesInPast"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/yes_in_past" />
+
+                        <TextView
+                            android:id="@+id/btnAlcoholYes"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/yes" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/diet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_22sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/alcohol">
+
+                    <TextView
+                        android:id="@+id/tvDietQuestion"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_0dp"
+                        android:text="@string/lifestyle_question_diet"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/oldDietCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_9sdp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDietQuestion">
+
+                        <TextView
+                            android:id="@+id/btnDietHealthy"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/left_mh_view_selector"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/healthy" />
+
+                        <TextView
+                            android:id="@+id/btnDietTypical"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/typical" />
+
+                        <TextView
+                            android:id="@+id/btnDietUnhealthy"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/unhealthy" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/dietComments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_22sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/diet">
+
+                    <TextView
+                        android:id="@+id/tvDietCommentsQuestion"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_0dp"
+                        android:text="@string/lifestyle_question_diet_comments"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etUserInput"
+                        style="@style/Form_Input_Style_BG"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_toStartOf="@id/dietComments"
+                        android:padding="@dimen/_8sdp"
+                        app:layout_constraintTop_toBottomOf="@id/tvDietCommentsQuestion" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_22sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dietComments">
+
+                    <TextView
+                        android:id="@+id/tvExercisingQuestion"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_0dp"
+                        android:text="@string/lifestyle_question_diet_exercising"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/oldExercisingCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_9sdp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvExercisingQuestion">
+
+                        <TextView
+                            android:id="@+id/btnLessThanOne"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/left_mh_view_selector"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/less_than_one" />
+
+                        <TextView
+                            android:id="@+id/btnOneToThree"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/one_to_three" />
+
+                        <TextView
+                            android:id="@+id/btnFourToNine"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/four_to_nine" />
+
+                        <TextView
+                            android:id="@+id/btnTenToFifteen"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/ten_to_fifteen" />
+
+                        <TextView
+                            android:id="@+id/btnLessThanFifteen"
+                            style="@style/Form_MH_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="@dimen/_6sdp"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:text="@string/less_than_fifteen" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

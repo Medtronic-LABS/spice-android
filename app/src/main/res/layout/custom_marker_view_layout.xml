@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/graph_marker_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvSystolic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/primary_medium_blue"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/tvDiastolic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/ncd_accent"
+        android:textSize="@dimen/_12ssp" />
+
+
+    <TextView
+        android:id="@+id/tvPulse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/b_w_black"
+        android:textSize="@dimen/_12ssp" />
+
+
+</LinearLayout>

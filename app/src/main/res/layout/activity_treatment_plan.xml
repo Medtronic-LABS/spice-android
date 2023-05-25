@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/search_background"
+    tools:context=".ui.medicalreview.TreatmentPlanActivity">
+
+    <include
+        android:id="@+id/bottomSheet"
+        layout="@layout/footer_medical_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSheet"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:flexWrap="wrap"
+            app:justifyContent="center"
+            app:layout_constraintBottom_toTopOf="@+id/bottomSheet"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/MedicalReviewFrequency"
+                layout="@layout/spinner_layout" />
+
+            <include
+                android:id="@+id/BPCheckFrequency"
+                layout="@layout/spinner_layout" />
+
+            <include
+                android:id="@+id/BloodGlucoseFrequency"
+                layout="@layout/spinner_layout" />
+
+
+            <include
+                android:id="@+id/HbA1cFrequency"
+                layout="@layout/spinner_layout" />
+
+
+            <include
+                android:id="@+id/DiabetesFootFrequency"
+                layout="@layout/spinner_layout" />
+
+            <include
+                android:id="@+id/AntenatalFrequency"
+                layout="@layout/spinner_layout" />
+
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

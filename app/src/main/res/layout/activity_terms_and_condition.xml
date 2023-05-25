@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.screening.TermsAndConditionActivity">
+
+    <TextView
+        android:id="@+id/tvTermsAndConditionInfo"
+        style="@style/TextStyle_Bold_16_NoBG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_28sdp"
+        android:layout_marginVertical="@dimen/_12sdp"
+        android:gravity="start"
+        android:text="@string/terms_condition_info_screening"
+        android:textColor="@color/purple"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <WebView
+        android:id="@+id/termsConditionWebView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTermsAndConditionInfo" />
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Form_Label_Style"
+        android:layout_width="wrap_content"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:text="@string/patient_initial"
+        app:layout_constraintBottom_toTopOf="@+id/etUserInitial"
+        app:layout_constraintStart_toStartOf="@id/etUserInitial"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etUserInitial"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:background="@drawable/edittext_background"
+        android:hint="@string/enter_your_initials"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:textColor="@color/navy_blue"
+        android:textColorHint="@color/edittext_stroke"
+        android:textSize="@dimen/_14ssp"
+        android:inputType="textCapWords"
+        app:layout_constraintBottom_toTopOf="@+id/btnAccept"
+        app:layout_constraintEnd_toEndOf="@+id/btnAccept"
+        app:layout_constraintStart_toStartOf="@+id/btnAccept" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAccept"
+        style="@style/Button_Style"
+        android:minWidth="@dimen/terms_and_condition_button_width"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:background="@drawable/button_selector_cobalt"
+        android:text="@string/accept_terms_condition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/_12sdp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnScreenNextPatient"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/llHolderStatsCard"
+                style="@style/CardView_Style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/labelHeader"
+                        style="@style/Form_Header_Style"
+                        android:layout_width="match_parent"
+                        android:background="@color/card_background"
+                        android:paddingVertical="@dimen/_9sdp"
+                        android:text="@string/today_s_stats"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llHolderStats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@+id/labelHeader">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:paddingVertical="@dimen/_15sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/labelPeopleScreened"
+                                style="@style/TextStyle_Regular_14"
+                                android:gravity="center"
+                                android:paddingHorizontal="@dimen/_10sdp"
+                                android:text="@string/people_screened"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvPeopleScreened"
+                                style="@style/TextStyle_Bold_18"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:gravity="center"
+                                android:paddingHorizontal="@dimen/_10sdp"
+                                android:text="@string/zero_label"
+                                android:textColor="@color/navy_blue"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/labelPeopleScreened" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:paddingVertical="@dimen/_20sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/labelPeopleReferred"
+                                style="@style/TextStyle_Regular_14"
+                                android:gravity="center"
+                                android:text="@string/people_referred"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvPeopleReferred"
+                                style="@style/TextStyle_Bold_18"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:gravity="center"
+                                android:paddingHorizontal="@dimen/_10sdp"
+                                android:text="@string/zero_label"
+                                android:textColor="@color/navy_blue"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/labelPeopleReferred" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelScreeningPatientInfo"
+                style="@style/TextStyle_Regular_14"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/general_details_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llHolderStatsCard" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSiteName"
+                style="@style/TextStyle_Regular_16"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:textColor="@color/navy_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelScreeningPatientInfo" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:orientation="horizontal"
+                android:padding="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tvSiteName">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/labelScreeningCategory"
+                        style="@style/TextStyle_Regular_14"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:text="@string/screening_category"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvScreeningCategory"
+                        style="@style/TextStyle_Regular_16"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:textColor="@color/navy_blue"
+                        app:layout_constraintStart_toStartOf="@id/labelScreeningCategory"
+                        app:layout_constraintTop_toBottomOf="@+id/labelScreeningCategory" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clScreeningTypeHolder"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/labelScreeningType"
+                        style="@style/TextStyle_Regular_14"
+                        android:text="@string/screening_type"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvScreeningType"
+                        style="@style/TextStyle_Regular_16"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:textColor="@color/navy_blue"
+                        app:layout_constraintEnd_toEndOf="@id/labelScreeningType"
+                        app:layout_constraintTop_toBottomOf="@+id/labelScreeningType" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnScreenNextPatient"
+        style="@style/Button_Style"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_30sdp"
+        android:minWidth="@dimen/_200sdp"
+        android:text="@string/screen_next_patient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

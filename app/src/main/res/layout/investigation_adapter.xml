@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_6sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llTest"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvRefOn"
+            app:layout_constraintHorizontal_weight="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDropDown"
+                android:layout_width="@dimen/_24sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="@dimen/_24sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_arrow_down"
+                android:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/tvTestName"
+                style="@style/MR_Field_Style"
+                android:layout_width="0dp"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                app:layout_constraintStart_toEndOf="@id/ivDropDown"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ivDot" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDot"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvTestName"
+                app:layout_constraintBottom_toBottomOf="@id/tvTestName"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center_vertical"
+                android:visibility="gone"
+                android:src="@drawable/ic_abnormal"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvRefOn"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:paddingStart="@dimen/_0dp"
+            android:paddingEnd="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvRefBy"
+            app:layout_constraintHorizontal_weight="0.4"
+            app:layout_constraintStart_toEndOf="@+id/llTest"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRefBy"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:paddingStart="@dimen/_0dp"
+            android:paddingEnd="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvTestedOn"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvRefOn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTestedOn"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:paddingStart="@dimen/_0dp"
+            android:paddingEnd="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvValue"
+            app:layout_constraintHorizontal_weight="0.4"
+            app:layout_constraintStart_toEndOf="@+id/tvRefBy"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvValue"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/llMenus"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvTestedOn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/llMenus"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_0dp"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:flow_maxElementsWrap="2"
+            app:justifyContent="flex_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@id/tvValue"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivEdit"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@drawable/button_white_background"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_edit_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRemove"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@drawable/button_white_background"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_close_error"
+                android:tint="@color/cobalt_blue"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDelete"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:background="@drawable/button_white_background"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_baseline_delete_outline_24"
+                android:tint="@color/cobalt_blue"
+                android:visibility="gone" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resultsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_medium_blue_bg"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_0dp"
+        android:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/resultsGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_0dp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:horizontalSpacing="@dimen/_10sdp"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="@dimen/_3sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvComments"
+            style="@style/MR_Field_Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/test_comments"
+            app:layout_constraintTop_toBottomOf="@id/resultsGrid" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etComment"
+            style="@style/Form_Input_Style_20"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:background="@drawable/edittext_background"
+            android:gravity="start"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            app:layout_constraintBottom_toTopOf="@id/btnReview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvComments" />
+
+        <View
+            android:id="@+id/headerDivider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/divider_color"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnReview"
+            style="@style/Button_Style_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_44sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_tick"
+            android:drawablePadding="@dimen/_8sdp"
+            android:drawableTint="@color/cobalt_blue"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:text="@string/mark_as_reviewed"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintBottom_toTopOf="@id/headerDivider"
+            app:layout_constraintEnd_toEndOf="@id/etComment"
+            app:layout_constraintTop_toBottomOf="@id/etComment" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/reviewGrp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="btnReview,etComment, tvComments" />
+
+        <include
+            android:id="@+id/commentLayout"
+            layout="@layout/labtest_comments_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/headerDivider"
+            app:layout_constraintTop_toBottomOf="@id/resultsGrid" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

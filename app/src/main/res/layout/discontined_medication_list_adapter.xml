@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvDMMedicationName"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvDMDosage"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Fevago" />
+
+        <TextView
+            android:id="@+id/tvDMDosage"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvDMUnit"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toEndOf="@+id/tvDMMedicationName"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0.5" />
+
+        <TextView
+            android:id="@+id/tvDMUnit"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvDMForm"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toEndOf="@+id/tvDMDosage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="mg" />
+
+        <TextView
+            android:id="@+id/tvDMForm"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvDMFrequency"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/tvDMUnit"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Injection" />
+
+        <TextView
+            android:id="@+id/tvDMFrequency"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvStartedFrom"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/tvDMForm"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="PRN" />
+
+        <TextView
+            android:id="@+id/tvStartedFrom"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvDiscontinuedOn"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/tvDMFrequency"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="15, Nov 2021" />
+
+        <TextView
+            android:id="@+id/tvDiscontinuedOn"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvDaysPrescribed"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/tvStartedFrom"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="15, Nov 2021" />
+
+        <TextView
+            android:id="@+id/tvDaysPrescribed"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:textColor="@color/cobalt_blue"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/tvDiscontinuedOn"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="120" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/headerDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/clHeader" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

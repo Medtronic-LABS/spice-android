@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="@dimen/_24sdp"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTestName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16sdp"
+        android:text="@string/test_name"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_regular"
+        android:padding="@dimen/_8sdp"
+        android:gravity="start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.35"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReferredDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16sdp"
+        android:text="@string/referred_on"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_regular"
+        android:padding="@dimen/_8sdp"
+        android:gravity="start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTestName"
+        app:layout_constraintWidth_percent="0.25"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReferredBy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16sdp"
+        android:text="@string/referred_by"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_regular"
+        android:padding="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_100sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvReferredDate"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEdit"
+        android:layout_width="@dimen/_42sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:background="@drawable/button_white_background"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/ic_edit_icon"
+        android:layout_marginRight="@dimen/_24sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

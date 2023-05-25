@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:weightSum="9">
+
+        <TextView
+            android:id="@+id/tvMedicationName"
+            style="@style/MR_Field_Style"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="Fevago" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etDosage"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:inputType="numberDecimal"
+            android:background="@drawable/et_background"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="0.5" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/tvUnit"
+            style="@style/Form_Spinner_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/et_background"
+            android:minHeight="@dimen/_40sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="PRN" />
+
+        <TextView
+            android:id="@+id/tvForm"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="Injection" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnerForm"
+            style="@style/Form_Spinner_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/et_background"
+            android:minHeight="@dimen/_40sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="PRN" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnerFrequency"
+            style="@style/Form_Spinner_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/et_background"
+            android:minHeight="@dimen/_40sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="PRN" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPrescribedDays"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/et_background"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="30" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/etInstruction"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/et_background"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="Before food" />
+
+        <TextView
+            android:id="@+id/tvPrescribedSince"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/separator_hyphen"
+            android:textColor="@color/cobalt_blue"
+            android:textSize="@dimen/_14ssp"
+            tools:text="-" />
+
+        <ImageView
+            android:id="@+id/ivResetMedication"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:contentDescription="@string/reset_medication"
+            android:src="@drawable/icon_reset_grey" />
+
+        <ImageView
+            android:id="@+id/ivRemoveMedication"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:contentDescription="@string/remove_medication"
+            android:src="@drawable/icon_remove_blue" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMedicineErrorMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:fontFamily="@font/inter_regular"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:textColor="@color/a_red_error"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone" />
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/divider_color" />
+
+</LinearLayout>

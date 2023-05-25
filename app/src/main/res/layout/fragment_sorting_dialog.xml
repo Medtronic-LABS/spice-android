@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_16sdp"
+    android:background="@android:color/transparent"
+    app:cardCornerRadius="@dimen/_12sdp"
+    app:cardElevation="@dimen/_2sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/titleCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.medtroniclabs.opensource.custom.DialogTitleFrameLayout
+                    android:id="@+id/labelHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:dialogTitle="@string/sort_by"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/edittext_stroke"
+                app:layout_constraintTop_toBottomOf="@id/titleCard" />
+
+            <RadioGroup
+                android:id="@+id/rgSortCondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_18sdp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/divider">
+
+                <RadioButton
+                    android:id="@+id/rbRedRisk"
+                    style="@style/RadioButton_General"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/red_risk"
+                    android:textColor="@color/enabled_disbled_color"
+                    android:textSize="@dimen/_14ssp" />
+
+                <RadioButton
+                    android:id="@+id/rbLatestAssesment"
+                    style="@style/RadioButton_General"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/latest_assessment_on_that_day_in_that_respective_facility"
+                    android:textColor="@color/enabled_disbled_color"
+                    android:textSize="@dimen/_14ssp" />
+
+                <RadioButton
+                    android:id="@+id/rbMedReview"
+                    style="@style/RadioButton_General"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/medical_review_due_date"
+                    android:textColor="@color/enabled_disbled_color"
+                    android:textSize="@dimen/_14ssp" />
+
+                <RadioButton
+                    android:id="@+id/rbBP"
+                    style="@style/RadioButton_General"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/high_bp_to_low_bg"
+                    android:textColor="@color/enabled_disbled_color"
+                    android:textSize="@dimen/_14ssp" />
+
+                <RadioButton
+                    android:id="@+id/rbBG"
+                    style="@style/RadioButton_General"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/high_bg_to_low_bg"
+                    android:textColor="@color/enabled_disbled_color"
+                    android:textSize="@dimen/_14ssp" />
+
+                <RadioButton
+                    android:id="@+id/rbAssessmentDueDate"
+                    style="@style/RadioButton_General"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/assessment_due_date"
+                    android:textColor="@color/enabled_disbled_color"
+                    android:textSize="@dimen/_14ssp" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/dividerOne"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/edittext_stroke"
+                app:layout_constraintTop_toBottomOf="@+id/rgSortCondition" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReset"
+                style="@style/Button_Style_cancel"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/btn_reset_selector"
+                android:enabled="false"
+                android:minWidth="@dimen/_100sdp"
+                android:text="@string/reset"
+                android:textColor="@color/reset_btn_selector"
+                app:layout_constraintEnd_toStartOf="@+id/btnDone"
+                app:layout_constraintTop_toTopOf="@id/btnDone" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDone"
+                style="@style/Button_Style"
+                android:background="@drawable/button_selector_cobalt"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:minWidth="@dimen/_100sdp"
+                android:text="@string/done"
+                android:enabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerOne" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

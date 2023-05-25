@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingTop="@dimen/_12sdp"
+    android:paddingEnd="@dimen/_16sdp"
+    android:paddingBottom="@dimen/_2sdp">
+
+    <TextView
+        android:id="@+id/tvIsb"
+        style="@style/Form_Label_Style"
+        android:layout_width="wrap_content"
+        android:text="@string/height"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.medtroniclabs.opensource.ui.indicator.views.IndicatorStayLayout
+        android:id="@+id/indicatorStayLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/tvIsb">
+
+        <com.medtroniclabs.opensource.ui.views.IndicatorSeekBar
+            android:id="@+id/indicatorSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isb_max="100"
+            app:isb_min="0"
+            app:isb_seek_smoothly="true"
+            app:isb_show_indicator="circular_bubble"
+            app:isb_show_tick_marks_type="oval"
+            app:isb_show_tick_texts="true"
+            app:isb_ticks_count="11" />
+
+    </com.medtroniclabs.opensource.ui.indicator.views.IndicatorStayLayout>
+
+    <TextView
+        android:id="@+id/tvErrorMessage"
+        style="@style/TextStyle_Error_14"
+        android:paddingVertical="@dimen/_8sdp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/indicatorStayLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

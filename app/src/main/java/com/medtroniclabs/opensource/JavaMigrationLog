@@ -1,0 +1,33 @@
+----------------------------------------------------------
+* API EndPoint : /get-static
+
+Response Changes
+* MetaDataResponse - Changed account from String to Long
+* SecuredPreference - Changed ACCOUNT from String to Long
+* MetaDataResponse - Changed operatingUnit from String to Long
+* SiteResponse - Changed tenantId from String to Long
+* MetaDataResponse - Changed operatingUnit from String to Long
+* SecuredPreference - Changed OPERATING_UNIT from String to Long
+* AccountWorkflow -> id changed from String to Long
+* SiteEntity - CHECK tenantId USAGE FOR TYPE IN ALL FILES
+
+DataBase changes:
+1. CountryEntity -> id changed from String to Long
+2. CountyEntity -> id changed from String to Long
+3. SubCountyEntity -> id changed from String to Long
+4. CountyEntity -> country renamed to countryId & changed type from String to Long
+5. SubCountyEntity -> county renamed to countyId & changed type from String to Long
+6. SymptomEntity -> id changed from String to Long
+7. MedicalComplianceEntity -> id changed from String to Long
+8. MedicalComplianceEntity -> parentComplianceId changed from String to Long
+9. DiagnosisEntity -> id changed from String to Long
+10. FrequencyEntity -> id changed from String to Long
+11. ShortageReasonEntity -> id changed from String to Long
+12. UnitMetricEntity -> id changed from String to Long
+13. NutritionLifeStyle -> id changed from String to Long
+14. ProgramEntity -> id changed from String to Long
+15. ProgramEntity -> tenantId changed from String to Long
+16. ProgramEntity -> sites changed from ArrayList<String> to ArrayList<Long>
+
+
+----------------------------------------------------------

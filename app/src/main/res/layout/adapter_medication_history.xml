@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvPrescribedDate"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:gravity="start"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvDosage"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="15 Nov, 2021" />
+
+        <TextView
+            android:id="@+id/tvDosage"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvUnit"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toEndOf="@+id/tvPrescribedDate"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0.5" />
+
+        <TextView
+            android:id="@+id/tvUnit"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvForm"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toEndOf="@+id/tvDosage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="mg" />
+
+        <TextView
+            android:id="@+id/tvForm"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvFrequency"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toEndOf="@+id/tvUnit"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Tablet" />
+
+        <TextView
+            android:id="@+id/tvFrequency"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvPrescribedDays"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toEndOf="@+id/tvForm"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="TDS" />
+
+        <TextView
+            android:id="@+id/tvPrescribedDays"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvInformation"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toEndOf="@+id/tvFrequency"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="30" />
+
+        <TextView
+            android:id="@+id/tvInformation"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="start"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.1"
+            app:layout_constraintStart_toEndOf="@+id/tvPrescribedDays"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Whenever BP shoots higgh" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

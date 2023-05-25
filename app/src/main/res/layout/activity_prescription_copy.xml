@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/search_background"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/llFocus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/etPrescriptionSearch"
+            style="@style/Form_Input_Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@drawable/et_background"
+            android:drawableStart="@drawable/ic_search_patient"
+            android:drawablePadding="@dimen/_8sdp"
+            android:hint="@string/medication_search_hint"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="@dimen/_12sdp"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@id/btnAddMedicine"
+            app:layout_constraintEnd_toStartOf="@+id/btnAddMedicine"
+            app:layout_constraintHorizontal_weight="7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnAddMedicine" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddMedicine"
+            style="@style/Button_Style"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/button_selector_cobalt"
+            android:enabled="false"
+            android:text="@string/add_medicine"
+            app:layout_constraintBottom_toBottomOf="@id/etPrescriptionSearch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        app:layout_constraintBottom_toTopOf="@+id/clFooter"
+        app:layout_constraintTop_toBottomOf="@id/clSearch">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CardView_Style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                app:strokeColor="@color/light_gray"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_6sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_12sdp"
+                        android:weightSum="9">
+
+                        <TextView
+                            android:id="@+id/tvMedicationName"
+                            style="@style/MR_Field_Style"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/medication_name"
+                            android:textColor="@color/table_title"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/tvDosage"
+                            style="@style/MR_Field_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/dosage"
+                            android:textColor="@color/table_title"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/tvUnit"
+                            style="@style/MR_Field_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/unit"
+                            android:textColor="@color/table_title"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/tvForm"
+                            style="@style/MR_Field_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/form"
+                            android:textColor="@color/table_title"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/tvFrequency"
+                            style="@style/MR_Field_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/frequency"
+                            android:textColor="@color/table_title"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/tvPrescribedDays"
+                            style="@style/MR_Field_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/prescribed_days"
+                            android:textColor="@color/table_title"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/tvInformation"
+                            style="@style/MR_Field_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/instruction_to_take"
+                            android:textColor="@color/table_title"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/tvPrescribedSince"
+                            style="@style/MR_Field_Style"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/prescribed_since"
+                            android:textColor="@color/table_title"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <View
+                            android:id="@+id/viewDeleteMedication"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="0.5" />
+
+                        <View
+                            android:id="@+id/viewRemoveMedication"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.5" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/headerDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/divider_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lHeader" />
+
+                    <LinearLayout
+                        android:id="@+id/llMedicationList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNoData"
+                        style="@style/MR_NoData_Style"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/no_medication_prescribed"
+                        android:textSize="@dimen/_14ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <TextView
+                android:id="@+id/tvDiscontinuedMedication"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_15sdp"
+                android:text="@string/view_discontinued_medication"
+                android:textColor="@color/cobalt_blue"
+                android:textSize="@dimen/_14ssp" />
+
+            <LinearLayout
+                android:id="@+id/llDiscontinuedMedication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/bg_custom_cardview"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/tvDiscontinuedMedication">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvDMMedicationName"
+                        style="@style/MR_Field_Style"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/medication_name"
+                        android:textColor="@color/table_title"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvDMDosage"
+                        app:layout_constraintHorizontal_weight="0.15"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDMDosage"
+                        style="@style/MR_Field_Style"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/dosage"
+                        android:textColor="@color/table_title"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvDMUnit"
+                        app:layout_constraintHorizontal_weight="0.1"
+                        app:layout_constraintStart_toEndOf="@+id/tvDMMedicationName"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDMUnit"
+                        style="@style/MR_Field_Style"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/unit"
+                        android:textColor="@color/table_title"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvDMForm"
+                        app:layout_constraintHorizontal_weight="0.1"
+                        app:layout_constraintStart_toEndOf="@+id/tvDMDosage"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDMForm"
+                        style="@style/MR_Field_Style"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/form"
+                        android:textColor="@color/table_title"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvDMFrequency"
+                        app:layout_constraintHorizontal_weight="0.15"
+                        app:layout_constraintStart_toEndOf="@+id/tvDMUnit"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDMFrequency"
+                        style="@style/MR_Field_Style"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/frequency"
+                        android:textColor="@color/table_title"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvStartedFrom"
+                        app:layout_constraintHorizontal_weight="0.15"
+                        app:layout_constraintStart_toEndOf="@+id/tvDMForm"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvStartedFrom"
+                        style="@style/MR_Field_Style"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/started_from"
+                        android:textColor="@color/table_title"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvDiscontinuedOn"
+                        app:layout_constraintHorizontal_weight="0.15"
+                        app:layout_constraintStart_toEndOf="@+id/tvDMFrequency"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDiscontinuedOn"
+                        style="@style/MR_Field_Style"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:padding="@dimen/_3sdp"
+                        android:text="@string/discontinued_on"
+                        android:textColor="@color/table_title"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvDaysPrescribed"
+                        app:layout_constraintHorizontal_weight="0.15"
+                        app:layout_constraintStart_toEndOf="@+id/tvStartedFrom"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDaysPrescribed"
+                        style="@style/MR_Field_Style"
+                        android:layout_width="@dimen/_0dp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:padding="@dimen/_3sdp"
+                        android:text="@string/days_prescribed"
+                        android:textColor="@color/table_title"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="0.15"
+                        app:layout_constraintStart_toEndOf="@+id/tvDiscontinuedOn"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/headerDMDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/divider_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lHeader" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDiscontinuedMedicationList"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_250sdp"
+                    android:visibility="visible"
+                    tools:listitem="@layout/discontined_medication_list_adapter" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDMNoData"
+                    style="@style/MR_NoData_Style"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_0dp"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/_50sdp"
+                    android:text="@string/no_discontinued_medication"
+                    android:textSize="@dimen/_14ssp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPrescribe"
+            style="@style/Button_Style"
+            android:background="@drawable/button_selector_cobalt"
+            android:enabled="false"
+            android:minWidth="@dimen/_200sdp"
+            android:paddingHorizontal="@dimen/_30sdp"
+            android:text="@string/prescribe"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRenewAll"
+            style="@style/Button_Style_Border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:text="@string/renew_all"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnPrescribe"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBack"
+            style="@style/Button_Style_Border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back_to_medical_review"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

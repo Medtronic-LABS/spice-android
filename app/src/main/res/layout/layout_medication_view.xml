@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_6sdp"
+        android:weightSum="9">
+
+        <TextView
+            android:id="@+id/tvMedicationName"
+            style="@style/MR_Field_Style"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="Fevago" />
+
+        <TextView
+            android:id="@+id/tvDosage"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="0.5" />
+
+        <TextView
+            android:id="@+id/tvUnit"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="mg" />
+
+        <TextView
+            android:id="@+id/tvForm"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="Injection" />
+
+        <TextView
+            android:id="@+id/tvFrequency"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="visible"
+            tools:text="PRN" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivPrescriptionCompleted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:contentDescription="@string/prescription"
+                android:src="@drawable/icon_warning_error"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/tvPrescribedDays" />
+
+            <TextView
+                android:id="@+id/tvPrescribedDays"
+                style="@style/MR_Field_Style"
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                tools:text="30" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvInformation"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="Before food" />
+
+        <TextView
+            android:id="@+id/tvPrescribedSince"
+            style="@style/MR_Field_Style"
+            android:layout_width="@dimen/_0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/separator_hyphen"
+            android:textColor="@color/cobalt_blue"
+            android:textSize="@dimen/_14ssp"
+            tools:text="-" />
+
+        <ImageView
+            android:id="@+id/ivDeleteMedication"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_weight="0.5"
+            android:contentDescription="@string/delete_medication"
+            android:src="@drawable/icon_delete_red" />
+
+        <ImageView
+            android:id="@+id/ivEditMedication"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:contentDescription="@string/edit_medication"
+            android:src="@drawable/icon_edit_blue" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/divider_color" />
+
+</LinearLayout>

@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_16sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_0dp"
+                    android:background="@color/black_white_grey"
+                    app:layout_constraintBottom_toBottomOf="@id/labelHeader"
+                    app:layout_constraintTop_toTopOf="@id/labelHeader" />
+
+                <com.medtroniclabs.opensource.custom.DialogTitleFrameLayout
+                    android:id="@+id/labelHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:dialogTitle="@string/pregnancy_details"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/edittext_stroke"
+                    app:layout_constraintTop_toBottomOf="@id/labelHeader" />
+
+                <LinearLayout
+                    android:id="@+id/llGravida"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/secondBarrier"
+                    app:layout_constraintEnd_toStartOf="@+id/llParity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider">
+
+                    <TextView
+                        android:id="@+id/tvGravidaTitle"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/gravida"
+                        tools:ignore="RtlSymmetry" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etGravida"
+                        style="@style/Form_Input_Style"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:background="@drawable/edittext_background"
+                        android:hint="@string/no_of_pregnancies"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tvErrorGravida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/a_red_error"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llParity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/secondBarrier"
+                    app:layout_constraintEnd_toStartOf="@+id/llTemperature"
+                    app:layout_constraintStart_toEndOf="@+id/llGravida"
+                    app:layout_constraintTop_toBottomOf="@+id/divider">
+
+                    <TextView
+                        android:id="@+id/tvParityTitle"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/parity"
+                        tools:ignore="RtlSymmetry" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etParity"
+                        style="@style/Form_Input_Style"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:background="@drawable/edittext_background"
+                        android:hint="@string/no_of_live_birth"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tvErrorParity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/a_red_error"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llTemperature"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/secondBarrier"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/llParity"
+                    app:layout_constraintTop_toBottomOf="@+id/divider">
+
+                    <TextView
+                        android:id="@+id/tvTemperatureTitle"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/temperature_in_celsius"
+                        tools:ignore="RtlSymmetry" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etTemperature"
+                        style="@style/Form_Input_Style"
+                        android:inputType="numberDecimal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:background="@drawable/edittext_background"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tvErrorTemperatue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/a_red_error"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/secondBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="llGravida,llParity,llTemperature" />
+
+                <LinearLayout
+                    android:id="@+id/llLastMensturalDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@+id/llGravida"
+                    app:layout_constraintStart_toStartOf="@id/llGravida"
+                    app:layout_constraintTop_toBottomOf="@+id/secondBarrier">
+
+                    <TextView
+                        android:id="@+id/tvLastMensturalDateTitle"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/date_of_last_mestrual_period"
+                        tools:ignore="RtlSymmetry" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etLastMensturalDate"
+                        style="@style/Form_Input_Style"
+                        android:inputType="date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:background="@drawable/edittext_background"
+                        android:hint="@string/dd_mm_yyyy"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tvErrorLastMensturalDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/a_red_error"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llEstimatedDelivery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@+id/llParity"
+                    app:layout_constraintStart_toStartOf="@+id/llParity"
+                    app:layout_constraintTop_toBottomOf="@+id/secondBarrier">
+
+                    <TextView
+                        android:id="@+id/tvEstimatedDeliveryTitle"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/estimated_delivery_date"
+                        tools:ignore="RtlSymmetry" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etEstimatedDelivery"
+                        style="@style/Form_Input_Style"
+                        android:inputType="date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:background="@drawable/edittext_background"
+                        android:hint="@string/dd_mm_yyyy"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tvErroEstimatedDelivery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/a_red_error"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llNoOfFetuses"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@id/llTemperature"
+                    app:layout_constraintStart_toStartOf="@+id/llTemperature"
+                    app:layout_constraintTop_toBottomOf="@+id/secondBarrier">
+
+                    <TextView
+                        android:id="@+id/tvNoOfFetusesTitle"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/number_of_fetuses_in_pregnancy"
+                        tools:ignore="RtlSymmetry" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etNoOfFetuses"
+                        style="@style/Form_Input_Style"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:background="@drawable/edittext_background"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tvErrorNoOfFetuses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/a_red_error"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/thirdBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="llLastMensturalDate,llEstimatedDelivery,llNoOfFetuses" />
+
+                <TextView
+                    android:id="@+id/tvGestationalAge"
+                    style="@style/TextStyle_16_NavyBlue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gestational_age"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginHorizontal="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/thirdBarrier"/>
+
+                <LinearLayout
+                    android:id="@+id/llDiagnosis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="@dimen/_24sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGestationalAge">
+
+                    <TextView
+                        android:id="@+id/tvTitleDiagnosis"
+                        style="@style/TextStyle_16_NavyBlue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/diagnosis_question"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <LinearLayout
+                        android:id="@+id/llDiagnosisBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitleDiagnosis">
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/rbNone"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/cb_selector"
+                            android:text="@string/none"
+                            android:clickable="true"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:textColor="@color/cb_text_color"
+                            android:textSize="@dimen/_14ssp"/>
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/rbEclampsia"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/cb_selector"
+                            android:text="@string/eclampsia"
+                            android:clickable="true"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:textColor="@color/cb_text_color"
+                            android:textSize="@dimen/_14ssp"/>
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/rbPreEclampsia"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/cb_selector"
+                            android:text="@string/pre_eclampsia"
+                            android:clickable="true"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:textColor="@color/cb_text_color"
+                            android:textSize="@dimen/_14ssp"/>
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/rbGestationalDiabetes"
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/cb_selector"
+                            android:text="@string/gestational_diabetes"
+                            android:clickable="true"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:textColor="@color/cb_text_color"
+                            android:textSize="@dimen/_14ssp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvErrorDiagnosis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/a_red_error"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llPatientOnTreatment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/llGravida"
+                    app:layout_constraintStart_toStartOf="@id/llGravida"
+                    app:layout_constraintTop_toBottomOf="@+id/llDiagnosis">
+
+                    <TextView
+                        android:id="@+id/tvPatientOnTreatmentTitle"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/is_the_patient_on_treatment"
+                        tools:ignore="RtlSymmetry" />
+
+                    <RadioGroup
+                        android:id="@+id/rgPatientOnTreatment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitleDiagnosis">
+
+                        <RadioButton
+                            android:id="@+id/rbYes"
+                            style="@style/RadioButton_General"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="@string/yes"
+                            android:textColor="@color/enabled_disbled_color"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <RadioButton
+                            android:id="@+id/rbNo"
+                            style="@style/RadioButton_General"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="@string/no"
+                            android:textColor="@color/enabled_disbled_color"
+                            android:textSize="@dimen/_14ssp" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/tvErrorPatientOnTreatment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/a_red_error"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llTimeOfDiagnosis"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/llParity"
+                    app:layout_constraintStart_toStartOf="@+id/llParity"
+                    app:layout_constraintTop_toTopOf="@+id/llPatientOnTreatment">
+
+                    <TextView
+                        android:id="@+id/tvTimeOfDiagnosis"
+                        style="@style/Form_Label_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/time_of_diagnosis"
+                        tools:ignore="RtlSymmetry" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etTimeOfDiagnosis"
+                        style="@style/Form_Input_Style"
+                        android:inputType="date"
+                        android:hint="@string/dd_mm_yyyy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        android:background="@drawable/edittext_background"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tvErrorTimeOfDiagnosis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/a_red_error"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/fifthBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="llPatientOnTreatment,llEstimatedDelivery" />
+
+
+                <View
+                    android:id="@+id/secondDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_60sdp"
+                    android:background="@color/edittext_stroke"
+                    app:layout_constraintTop_toBottomOf="@id/fifthBarrier" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnConfirm"
+                    style="@style/Button_Style_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:background="@drawable/btn_bg_selector"
+                    android:enabled="true"
+                    android:text="@string/save"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/secondDivider" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnCancel"
+                    style="@style/Button_Style_cancel"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="@string/cancel"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnConfirm"
+                    app:layout_constraintEnd_toStartOf="@+id/btnConfirm"
+                    app:layout_constraintTop_toTopOf="@+id/btnConfirm" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:id="@+id/loadingProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/spin_kit"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loader_spice" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitleLbl"
+        style="@style/Form_Label_Style"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="@string/tested_on"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:drawableEnd="@drawable/ic_date_picker_calendar"
+        app:layout_constraintStart_toStartOf="@id/tvTitleLbl"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleLbl" />
+
+    <View
+        android:id="@+id/viewInput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintBottom_toBottomOf="@id/etValue"
+        app:layout_constraintEnd_toEndOf="@id/etValue"
+        app:layout_constraintStart_toStartOf="@id/etValue"
+        app:layout_constraintTop_toTopOf="@id/etValue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
