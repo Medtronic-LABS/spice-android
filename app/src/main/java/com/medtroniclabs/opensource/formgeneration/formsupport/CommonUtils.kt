@@ -911,17 +911,15 @@ object CommonUtils {
 
     fun parseUserLocale(): String {
         val preference = SecuredPreference.getCultureName()
-        return when {
-            preference.contains(DefinedParams.EN_Locale, ignoreCase = true) ->
-                DefinedParams.EN
-            preference.contains(DefinedParams.BN_Locale, ignoreCase = true) ->
-                DefinedParams.BN
-            else -> DefinedParams.EN
-        }
+        return CultureLocale.values().firstOrNull { preference.contains(it.value, ignoreCase = true) }?.name
+            ?: CultureLocale.EN.name
     }
+
     fun checkIfTranslationEnabled(name: String): Boolean {
-        return name.contains(DefinedParams.BN_Locale, ignoreCase = true)
+        val locales = CultureLocale.values().map { it.value }
+        return locales.any { it.contains(name, ignoreCase = true) }
     }
+
 
     fun isProduction(): Boolean {
         return BuildConfig.FLAVOR == DefinedParams.Build_Type_Production || BuildConfig.FLAVOR == DefinedParams.Build_Type_BD_Production
