@@ -73,7 +73,8 @@ class LandingActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedL
         onNavigationItemSelected(binding.navView.menu.findItem(R.id.home))
 
         viewModel.validateSession()
-        hideCultureMenu()
+        // To Show the language preferences in side menu to Comment it
+//        hideCultureMenu()
     }
 
     private fun hideCultureMenu() {
