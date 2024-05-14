@@ -348,11 +348,17 @@ object DefinedParams {
     const val cultureValue = "cultureValue"
 
     const val TranslationEnabled = false
-    const val EN_Locale = "English"
-    const val BN_Locale = "Bengali"
-    const val EN = "en"
-    const val BN = "bn"
     const val InsuranceStatus = "insuranceStatus"
     const val InsuranceType = "insuranceType"
     const val OtherInsurance = "otherInsurance"
+
+    // To Add the language name
+    const val EN_Locale = "English"
+    const val BN_Locale = "Bengali"
+    const val Swahili_Locale = "Swahili"
+
+    // To Add the language code
+    const val EN = "en"
+    const val BN = "bn"
+    const val SW = "sw"
 }
