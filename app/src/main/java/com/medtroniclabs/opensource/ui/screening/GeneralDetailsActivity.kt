@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.RadioGroup
 import androidx.activity.viewModels
-import com.askjeffreyliu.flexboxradiogroup.FlexBoxRadioGroup
+import com.medtroniclabs.opensource.custom.flexboxradiogroup.FlexBoxRadioGroup
 import com.medtroniclabs.opensource.R
 import com.medtroniclabs.opensource.appextensions.markMandatory
 import com.medtroniclabs.opensource.appextensions.safeClickListener
