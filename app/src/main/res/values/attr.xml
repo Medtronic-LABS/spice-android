@@ -66,4 +66,11 @@
             <enum name="serif" value="3" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="FlexBoxRadioGroup">
+        <!-- The id of the child radio button that should be checked by default
+             within this radio group. -->
+        <attr name="uiCheckedButton" format="integer" />
+    </declare-styleable>
+
 </resources>
