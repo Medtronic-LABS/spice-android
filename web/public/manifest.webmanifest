@@ -1,0 +1,9 @@
+{
+  "name": "SPICE Medical Review",
+  "short_name": "SPICE",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Medical Review workflow for SPICE",
+  "icons": []
+}
